@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 503, y: 492}
   m_MaxSize: {x: 18097, y: 14042}
   vertical: 0
-  controlID: 70
+  controlID: 43
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 21
+  controlID: 49
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 22
+  controlID: 50
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Mesh
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Mesh
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5a5a0000
-    m_LastClickedID: 23130
-    m_ExpandedIDs: 000000005a5a000000ca9a3b
+    m_SelectedIDs: 6a5a0000
+    m_LastClickedID: 23146
+    m_ExpandedIDs: 00000000445a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005a5a0000
+    m_ExpandedIDs: 00000000445a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,7 +490,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: bef9fffff2faffff
+      m_ExpandedIDs: 34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -739,9 +739,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.8036375, y: 1.6475234, z: 13.035561}
+    m_Target: {x: 3.8284035, y: -12.249388, z: 10.446596}
     speed: 2
-    m_Value: {x: -1.8036375, y: 1.6475234, z: 13.035561}
+    m_Value: {x: 3.8284035, y: -12.249388, z: 10.446596}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -788,13 +788,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.058452774, y: 0.32256728, z: -0.019966811, w: -0.9445143}
+    m_Target: {x: -0.291462, y: 0.22729558, z: -0.07151037, w: -0.926413}
     speed: 2
-    m_Value: {x: -0.059870318, y: 0.32254145, z: -0.0204509, w: -0.94443864}
+    m_Value: {x: -0.29135907, y: 0.22868858, z: -0.071948625, w: -0.92608577}
   m_Size:
-    m_Target: 16.490192
+    m_Target: 20.508165
     speed: 2
-    m_Value: 16.490192
+    m_Value: 20.508165
   m_Ortho:
     m_Target: 0
     speed: 2
