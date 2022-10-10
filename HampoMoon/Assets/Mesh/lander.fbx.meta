@@ -3,7 +3,22 @@ guid: bda69dc68eab3154aa8c14d208ae98f9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dorado
+    second: {fileID: 2100000, guid: f210ed5c2a71eca48990b45242065958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: d532f5dcc90b4c646b69366b3a48194d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel solar
+    second: {fileID: 2100000, guid: 58787731051029a4c851c9fa954415d1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
