@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2021.3/staging' branch; Version is '2021.3.9f1 (ad3870b89536) revision 11352176'; Using compiler version '192829333'; Build Type 'Release'
+Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
 OS: 'Windows 11  (10.0.22000) 64bit Education' Language: 'es' Physical Memory: 16084 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\2021.3.9f1\Editor\Unity.exe
+C:\Program Files\2021.3.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,7 +15,7 @@ C:/Users/Luis/Documents/GTI/hampo-vr/HampoMoon
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-26060
+42785
 Successfully changed project path to: C:/Users/Luis/Documents/GTI/hampo-vr/HampoMoon
 C:/Users/Luis/Documents/GTI/hampo-vr/HampoMoon
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,10 +47,10 @@ C:/Users/Luis/Documents/GTI/hampo-vr/HampoMoon
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 50.32 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 47.80 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2021.3.9f1 (ad3870b89536)
-[Subsystems] Discovering subsystems at path C:/Program Files/2021.3.9f1/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
+[Subsystems] Discovering subsystems at path C:/Program Files/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Luis/Documents/GTI/hampo-vr/HampoMoon/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
@@ -60,44 +60,44 @@ Direct3D:
     VRAM:     3993 MB
     Driver:   30.0.14.9717
 Initialize mono
-Mono path[0] = 'C:/Program Files/2021.3.9f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/2021.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/2021.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56396
+Mono path[0] = 'C:/Program Files/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56816
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/2021.3.9f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.002427 seconds.
+Register platform support module: C:/Program Files/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/2021.3.11f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.002353 seconds.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 48.47 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 49.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.432 seconds
+- Completed reload, in  0.415 seconds
 Domain Reload Profiling:
-	ReloadAssembly (433ms)
-		BeginReloadAssembly (50ms)
+	ReloadAssembly (416ms)
+		BeginReloadAssembly (47ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (307ms)
-			LoadAssemblies (49ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (300ms)
+			LoadAssemblies (46ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (72ms)
+			SetupTypeCache (68ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (19ms)
-			SetupLoadedEditorAssemblies (181ms)
+			RebuildScriptCaches (18ms)
+			SetupLoadedEditorAssemblies (179ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (38ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (49ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (65ms)
+				ProcessInitializeOnLoadAttributes (63ms)
 				ProcessInitializeOnLoadMethodAttributes (28ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -105,53 +105,53 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003059 seconds.
+Registered in 0.003093 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.809 seconds
+- Completed reload, in  0.762 seconds
 Domain Reload Profiling:
-	ReloadAssembly (810ms)
-		BeginReloadAssembly (195ms)
+	ReloadAssembly (763ms)
+		BeginReloadAssembly (182ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (132ms)
-		EndReloadAssembly (540ms)
-			LoadAssemblies (55ms)
+			CreateAndSetChildDomain (128ms)
+		EndReloadAssembly (511ms)
+			LoadAssemblies (46ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (175ms)
+			SetupTypeCache (167ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (251ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (237ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (160ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				BeforeProcessingInitializeOnLoad (50ms)
+				ProcessInitializeOnLoadAttributes (156ms)
+				ProcessInitializeOnLoadMethodAttributes (18ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.38 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3380 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 27 unused Assets / (111.5 KB). Loaded Objects now: 3840.
-Memory consumption went from 116.5 MB to 116.4 MB.
-Total: 2.450500 ms (FindLiveObjects: 0.188600 ms CreateObjectMapping: 0.086600 ms MarkObjects: 2.099200 ms  DeleteObjects: 0.075300 ms)
+Unloading 27 unused Assets / (113.8 KB). Loaded Objects now: 3840.
+Memory consumption went from 116.6 MB to 116.4 MB.
+Total: 2.713400 ms (FindLiveObjects: 0.167800 ms CreateObjectMapping: 0.070400 ms MarkObjects: 2.385800 ms  DeleteObjects: 0.088700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -165,61 +165,159 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 336983.682621 seconds.
+  Time since last request: 67705.929411 seconds.
   path: Assets/Mesh/terreno_lunar.fbx
   artifactKey: Guid(69004f81cda6c214192e9d31694ecfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mesh/terreno_lunar.fbx using Guid(69004f81cda6c214192e9d31694ecfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ff8334e4fcb2950b0bd79030853b26a') in 0.199535 seconds 
+Start importing Assets/Mesh/terreno_lunar.fbx using Guid(69004f81cda6c214192e9d31694ecfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf4585b6c6d1baee37d3de1fea78392e') in 0.139191 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002531 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.667 seconds
+Domain Reload Profiling:
+	ReloadAssembly (668ms)
+		BeginReloadAssembly (98ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (503ms)
+			LoadAssemblies (55ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (184ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (212ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (41ms)
+				ProcessInitializeOnLoadAttributes (133ms)
+				ProcessInitializeOnLoadMethodAttributes (18ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3375 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (80.1 KB). Loaded Objects now: 3854.
+Memory consumption went from 121.1 MB to 121.0 MB.
+Total: 2.127000 ms (FindLiveObjects: 0.162700 ms CreateObjectMapping: 0.075600 ms MarkObjects: 1.841700 ms  DeleteObjects: 0.046400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004801 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Luis\Documents\GTI\hampo-vr\HampoMoon\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.669 seconds
+Domain Reload Profiling:
+	ReloadAssembly (670ms)
+		BeginReloadAssembly (89ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (521ms)
+			LoadAssemblies (50ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (172ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (235ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (150ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.22 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3375 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (80.2 KB). Loaded Objects now: 3857.
+Memory consumption went from 121.1 MB to 121.0 MB.
+Total: 2.451700 ms (FindLiveObjects: 0.175500 ms CreateObjectMapping: 0.081200 ms MarkObjects: 1.987600 ms  DeleteObjects: 0.205400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 100.312433 seconds.
+  Time since last request: 74.073833 seconds.
+  path: Assets/Day-Night Skyboxes/Materials/SkyMidnight.mat
+  artifactKey: Guid(97637a2a763b7f24b8da4e139e4144ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Day-Night Skyboxes/Materials/SkyMidnight.mat using Guid(97637a2a763b7f24b8da4e139e4144ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90edd2f081afb76512c97f8857cc2cc6') in 0.086884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.945899 seconds.
   path: Assets/Mesh/terreno_lunar.fbx
   artifactKey: Guid(69004f81cda6c214192e9d31694ecfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mesh/terreno_lunar.fbx using Guid(69004f81cda6c214192e9d31694ecfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b992d0f51bee7ec4c43840314c2a06a') in 0.088228 seconds 
+Start importing Assets/Mesh/terreno_lunar.fbx using Guid(69004f81cda6c214192e9d31694ecfe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5800144292837a95865120e3e343572a') in 0.140815 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.661226 seconds.
-  path: Assets/Materials/Material.001.mat
-  artifactKey: Guid(1a510a999fb328345827f5accc0851f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Material.001.mat using Guid(1a510a999fb328345827f5accc0851f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e3b845d65f1f2fd7d89e0b27550dc37') in 0.011672 seconds 
+  Time since last request: 1703.919197 seconds.
+  path: Assets/Mesh/lander 1.fbx
+  artifactKey: Guid(45fb69f863bb3f648a98d11080067371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mesh/lander 1.fbx using Guid(45fb69f863bb3f648a98d11080067371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f06c14b81ed1fd72c21ead68b09573ec') in 0.153044 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.585404 seconds.
-  path: Assets/Mesh/lander.fbx
-  artifactKey: Guid(bda69dc68eab3154aa8c14d208ae98f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mesh/lander.fbx using Guid(bda69dc68eab3154aa8c14d208ae98f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953d3be8335d158fcac49705a946e4ab') in 0.143333 seconds 
+  Time since last request: 13.912563 seconds.
+  path: Assets/Mesh/lander_alt.fbx
+  artifactKey: Guid(45fb69f863bb3f648a98d11080067371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mesh/lander_alt.fbx using Guid(45fb69f863bb3f648a98d11080067371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c683e4ac29dfafd9afdceb2494b7e2') in 0.093274 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.641112 seconds.
-  path: Assets/Materials/Dorado.mat
-  artifactKey: Guid(f210ed5c2a71eca48990b45242065958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Dorado.mat using Guid(f210ed5c2a71eca48990b45242065958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd0d31a41feabe6fb43d58758e311f0') in 0.012490 seconds 
+  Time since last request: 66.658653 seconds.
+  path: Assets/Mesh/lander 1.fbx
+  artifactKey: Guid(d11d45d14150f124c95c08028359c875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mesh/lander 1.fbx using Guid(d11d45d14150f124c95c08028359c875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e4f342b5badf521178f388c44e878de') in 0.139163 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Materials/Panel solar.mat
-  artifactKey: Guid(58787731051029a4c851c9fa954415d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Panel solar.mat using Guid(58787731051029a4c851c9fa954415d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d16938f762ee629c55c5e4d7aae6e18') in 0.015844 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.018578 seconds.
-  path: Assets/Materials/Luna.mat
-  artifactKey: Guid(1a510a999fb328345827f5accc0851f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Luna.mat using Guid(1a510a999fb328345827f5accc0851f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fef05dd1eda9b758ed59535f7e5f0855') in 0.012155 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.453521 seconds.
-  path: Assets/Materials/Mat_Luna/Luna.mat
-  artifactKey: Guid(4e4861ee172dc4948ace97bfa79df37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Mat_Luna/Luna.mat using Guid(4e4861ee172dc4948ace97bfa79df37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a203930896d8dfcd8a5fff64608a4a09') in 0.028342 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 75.669107 seconds.
-  path: Assets/Materials/Mat_Luna/Luna.mat
-  artifactKey: Guid(4e4861ee172dc4948ace97bfa79df37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Mat_Luna/Luna.mat using Guid(4e4861ee172dc4948ace97bfa79df37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99c90bb6715631033a4ff6019e07b598') in 0.039003 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.206500 seconds.
-  path: Assets/Materials/Mat_Luna/Luna.mat
-  artifactKey: Guid(4e4861ee172dc4948ace97bfa79df37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Mat_Luna/Luna.mat using Guid(4e4861ee172dc4948ace97bfa79df37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e40cb795df23bd34d548b9a67118b1c') in 0.016721 seconds 
+  Time since last request: 11.656925 seconds.
+  path: Assets/Mesh/lander_alt.fbx
+  artifactKey: Guid(d11d45d14150f124c95c08028359c875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mesh/lander_alt.fbx using Guid(d11d45d14150f124c95c08028359c875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95c2bfa2842c54f8a9030590b1292095') in 0.086264 seconds 
