@@ -11,6 +11,9 @@
 [Mm]emoryCaptures/
 UserSettings/
 
+# IL2cpp folder build data
+hampomoon_BackUpThisFolder_ButDontShipItWithYourGame
+
 # Vuforia tgz
 *.tgz
 
