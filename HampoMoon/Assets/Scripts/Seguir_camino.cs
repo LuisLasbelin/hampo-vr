@@ -34,7 +34,7 @@ public class Seguir_camino : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {       
+    {
         //Make the Unity Action also call your second function
     }
 
@@ -58,9 +58,12 @@ public class Seguir_camino : MonoBehaviour
             {
                 estable = false;
                 boton_estabilidad.SetActive(true);
+                estabilidad = 0;
+            }else
+            {
+                estabilidad -= rotacion_alterada;
             }
-
-            estabilidad -= rotacion_alterada;
+            
         }
         else
         {
@@ -76,7 +79,6 @@ public class Seguir_camino : MonoBehaviour
         }
 
 
-        
         if (acelerando && estable)
         {
             if (velocidad + aceleracion * Time.deltaTime <= velocidad_maxima)
@@ -87,7 +89,8 @@ public class Seguir_camino : MonoBehaviour
             {
                 velocidad = velocidad_maxima;
             }
-        }else
+        }
+        else
         {
             if (velocidad - aceleracion * 5 * Time.deltaTime >= 0)
             {
@@ -98,14 +101,13 @@ public class Seguir_camino : MonoBehaviour
                 velocidad = 0;
             }
         }
-        
-        
-       
+
 
         imagen.fillAmount = estabilidad / 100;
+        imagen.color = new Color(1 - estabilidad / 100, estabilidad / 100, 0);
     }
 
-    public  void Toggle_acelerar(bool acc)
+    public void Toggle_acelerar(bool acc)
     {
         acelerando = acc;
         Debug.Log("shit");
@@ -118,5 +120,4 @@ public class Seguir_camino : MonoBehaviour
             estabilidad += 5;
         }
     }
-    
 }

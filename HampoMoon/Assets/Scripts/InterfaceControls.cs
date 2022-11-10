@@ -13,6 +13,7 @@ public class InterfaceControls : MonoBehaviour
 
 
     public GameObject menuContainer;
+    public GameObject selector_pista;
     public GameObject videoUiContainer;
     public GameObject mainUiContainer;
     public GameObject instructionsUiContainer;
@@ -23,7 +24,9 @@ public class InterfaceControls : MonoBehaviour
     public Button exitInstructionsButton;
     public Button gameButton;
     public Button instructionsButton;
-    public string gameScene;
+    public string gameSceneReal;
+    public string gameSceneGTI;
+    public string gameSceneArco;
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +53,23 @@ public class InterfaceControls : MonoBehaviour
 
     void OpenGame()
     {
-        SceneManager.LoadScene(gameScene, LoadSceneMode.Single);
-        menuContainer.SetActive(false);
+        mainUiContainer.SetActive(false);
+        selector_pista.SetActive(true);
+    }
+    
+    public void seleccionar_gti()
+    {
+        SceneManager.LoadScene(gameSceneGTI, LoadSceneMode.Single);
+    }
+    
+    public void seleccionar_real()
+    {
+        SceneManager.LoadScene(gameSceneReal, LoadSceneMode.Single);
+    }
+    
+    public void seleccionar_arco()
+    {
+        SceneManager.LoadScene(gameSceneArco, LoadSceneMode.Single);
     }
 
     void PlayVideo()
