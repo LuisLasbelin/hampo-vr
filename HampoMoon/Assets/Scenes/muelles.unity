@@ -1815,13 +1815,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviewVisible: 1
   RuntimeOcclusion: 0
-  mTrackableName: PixarTOYSTORY
+  mTrackableName: hampomarcador
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/Database_1_2.xml
-  mAspectRatio: 1.166287
+  mDataSetPath: Vuforia/Marcas.xml
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.166287
+  mHeight: 1
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -1841,8 +1841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1473532440}
   mHiddenRoot: {fileID: 0}
-  mTargetName: PixarTOYSTORY
-  mDatasetName: Vuforia/Database_1_2.xml
+  mTargetName: hampomarcador
+  mDatasetName: Vuforia/Marcas.xml
   mCastedBehaviour: {fileID: 1473532440}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
