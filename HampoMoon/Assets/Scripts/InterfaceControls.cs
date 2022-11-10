@@ -9,17 +9,20 @@ using UnityEngine.SceneManagement;
 public class InterfaceControls : MonoBehaviour
 {
 
-    private TextMeshProUGUI videoButtonText;
     private VideoPlayer videoPlayer;
 
 
     public GameObject menuContainer;
     public GameObject videoUiContainer;
     public GameObject mainUiContainer;
+    public GameObject instructionsUiContainer;
     public Button introButton;
     public Button videoButton;
+    public Sprite[] playStopImages;
     public Button exitVideoButton;
+    public Button exitInstructionsButton;
     public Button gameButton;
+    public Button instructionsButton;
     public string gameScene;
 
     // Start is called before the first frame update
@@ -28,23 +31,26 @@ public class InterfaceControls : MonoBehaviour
         // Valores por defecto de los contenedores de menus
         menuContainer.SetActive(true);
         videoUiContainer.SetActive(false);
+        instructionsUiContainer.SetActive(false);
         mainUiContainer.SetActive(true);
         // Video
         videoPlayer = GameObject.FindObjectOfType<VideoPlayer>();
+        videoButton.image.sprite = playStopImages[0];
         // Inactivo por defecto
         videoPlayer.gameObject.SetActive(false);
 
         // botones
-        videoButtonText = videoButton.GetComponentInChildren<TextMeshProUGUI>();
         videoButton.onClick.AddListener(PlayVideo);
         exitVideoButton.onClick.AddListener(ReturnToMenu);
+        exitInstructionsButton.onClick.AddListener(ReturnToMenu);
         introButton.onClick.AddListener(OpenVideoMenu);
         gameButton.onClick.AddListener(OpenGame);
+        instructionsButton.onClick.AddListener(OpenInstrucMenu);
     }
 
     void OpenGame()
     {
-        SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
+        SceneManager.LoadScene(gameScene, LoadSceneMode.Single);
         menuContainer.SetActive(false);
     }
 
@@ -52,7 +58,7 @@ public class InterfaceControls : MonoBehaviour
     {
         videoPlayer.gameObject.SetActive(true);
         if (videoPlayer) videoPlayer.Play();
-        videoButtonText.text = "Stop";
+        videoButton.image.sprite = playStopImages[1];
         videoButton.image.color = Color.red;
         videoButton.onClick.AddListener(StopVideo);
     }
@@ -62,19 +68,27 @@ public class InterfaceControls : MonoBehaviour
         if (videoPlayer) videoPlayer.Stop();
         videoPlayer.gameObject.SetActive(false);
 
-        videoButtonText.text = "Play";
+        videoButton.image.sprite = playStopImages[0];
+
         videoButton.image.color = Color.green;
         videoButton.onClick.AddListener(PlayVideo);
     }
     void ReturnToMenu()
     {
         videoUiContainer.SetActive(false);
+        instructionsUiContainer.SetActive(false);
         mainUiContainer.SetActive(true);
     }
 
     void OpenVideoMenu()
     {
         videoUiContainer.SetActive(true);
+        mainUiContainer.SetActive(false);
+    }
+
+    void OpenInstrucMenu()
+    {
+        instructionsUiContainer.SetActive(true);
         mainUiContainer.SetActive(false);
     }
 }
