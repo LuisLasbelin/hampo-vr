@@ -28,7 +28,7 @@ public class Seguir_camino : MonoBehaviour
     private float distancia_recorrida;
 
     private bool estable;
-    public Button boton_acelerar;
+    public GameObject boton_estabilidad;
     public bool acelerando;
 
 
@@ -57,7 +57,7 @@ public class Seguir_camino : MonoBehaviour
             if (estabilidad - rotacion_alterada < 0)
             {
                 estable = false;
-                //imagen.color = Color.red;
+                boton_estabilidad.SetActive(true);
             }
 
             estabilidad -= rotacion_alterada;
@@ -67,7 +67,7 @@ public class Seguir_camino : MonoBehaviour
             if (estabilidad + 1 * Time.deltaTime > 100)
             {
                 estable = true;
-                //imagen.color = Color.green;
+                boton_estabilidad.SetActive(false);
             }
             else
             {
@@ -100,18 +100,23 @@ public class Seguir_camino : MonoBehaviour
         }
         
         
-        if (Input.GetKey("a") && !estable)
-        {
-            estabilidad += 5;
-        }
+       
 
-        //imagen.fillAmount = estabilidad / 100;
+        imagen.fillAmount = estabilidad / 100;
     }
 
     public  void Toggle_acelerar(bool acc)
     {
         acelerando = acc;
         Debug.Log("shit");
+    }
+
+    public void recuperar_estabilidad()
+    {
+        if (!estable)
+        {
+            estabilidad += 5;
+        }
     }
     
 }
