@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Muelles_y_carreteras.unity
     guid: ebfc8f0c5ad4dab4ea997bb7bd0da7fa
+  - enabled: 1
+    path: Assets/Scenes/Muelles_reales.unity
+    guid: e44eeb543df4dac448889453f3289009
+  - enabled: 1
+    path: Assets/Scenes/Muelles_arcoiris.unity
+    guid: d99231ff938dd3d48b9027e8e7abe12a
   m_configObjects: {}
