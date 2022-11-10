@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   exitInstructionsButton: {fileID: 1088730719}
   gameButton: {fileID: 27404347}
   instructionsButton: {fileID: 872248211}
-  gameScene: muelles
+  gameScene: Muelles_y_carreteras
 --- !u!1 &1500415938
 GameObject:
   m_ObjectHideFlags: 0
