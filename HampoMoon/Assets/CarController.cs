@@ -14,7 +14,7 @@ public class CarController : MonoBehaviour
     float giro;
     float giro_anterior;
     public float coefGiro = 6.0f;
-    public Animator m_animimator;
+   // public Animator m_animimator;
 
 
     Rigidbody body;
@@ -39,7 +39,7 @@ public class CarController : MonoBehaviour
         avance = move.y * coefAvance;
         giro = move.x * coefGiro;
 
-        if (avance != avance_anterior)
+        /*if (avance != avance_anterior)
         {
             switch (avance)
             {
@@ -53,9 +53,9 @@ public class CarController : MonoBehaviour
                     m_animimator.SetTrigger("parar");
                     break;
             }
-        }
+        }*/
         avance_anterior = avance;
-
+        /*
         if (giro != giro_anterior)
         {
             switch (giro)
@@ -70,7 +70,7 @@ public class CarController : MonoBehaviour
                     m_animimator.SetTrigger("recto");
                     break;
             }
-        }
+        }*/
         giro_anterior = giro;
     }
 
