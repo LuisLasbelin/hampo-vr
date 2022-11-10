@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InterfaceControls : MonoBehaviour
 {
@@ -11,34 +12,40 @@ public class InterfaceControls : MonoBehaviour
     private TextMeshProUGUI videoButtonText;
     private VideoPlayer videoPlayer;
 
+
+    public GameObject menuContainer;
     public GameObject videoUiContainer;
     public GameObject mainUiContainer;
     public Button introButton;
     public Button videoButton;
     public Button exitVideoButton;
+    public Button gameButton;
+    public string gameScene;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Valores por defecto de los contenedores de menus
+        menuContainer.SetActive(true);
+        videoUiContainer.SetActive(false);
+        mainUiContainer.SetActive(true);
+        // Video
         videoPlayer = GameObject.FindObjectOfType<VideoPlayer>();
         // Inactivo por defecto
         videoPlayer.gameObject.SetActive(false);
 
+        // botones
         videoButtonText = videoButton.GetComponentInChildren<TextMeshProUGUI>();
         videoButton.onClick.AddListener(PlayVideo);
         exitVideoButton.onClick.AddListener(ReturnToMenu);
         introButton.onClick.AddListener(OpenVideoMenu);
-
-
-        // Valores por defecto de los contenedores de menus
-        videoUiContainer.SetActive(false);
-        mainUiContainer.SetActive(true);
+        gameButton.onClick.AddListener(OpenGame);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OpenGame()
     {
-        
+        SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
+        menuContainer.SetActive(false);
     }
 
     void PlayVideo()
