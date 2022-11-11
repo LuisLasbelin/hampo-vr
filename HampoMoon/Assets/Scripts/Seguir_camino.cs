@@ -49,11 +49,21 @@ public class Seguir_camino : MonoBehaviour
         float rotacion_relativa = transform.rotation.y - posicion_anterior.y;
         float rotacion_alterada = Mathf.Abs(rotacion_relativa * 80);
 
+        
+        
         if (rotacion_alterada > 1 && rotacion_alterada < 50)
         {
-            Debug.Log(rotacion_alterada);
-            rueda_derecha.SetTrigger("Derecha");
-            rueda_iquierda.SetTrigger("Derecha");
+            //Debug.Log(rotacion_alterada);
+            if (rotacion_relativa > 0)
+            {
+                rueda_derecha.SetTrigger("Derecha");
+                rueda_iquierda.SetTrigger("Derecha");
+            }else
+            {
+                rueda_derecha.SetTrigger("Izquierda");
+                rueda_iquierda.SetTrigger("Izquierda");
+            }
+
             if (estabilidad - rotacion_alterada < 0)
             {
                 estable = false;
@@ -74,8 +84,10 @@ public class Seguir_camino : MonoBehaviour
             }
             else
             {
-                estabilidad += 10 * Time.deltaTime;
+                estabilidad += 100 * Time.deltaTime;
             }
+            rueda_derecha.SetTrigger("Recto");
+            rueda_iquierda.SetTrigger("Recto");
         }
 
 
@@ -110,7 +122,6 @@ public class Seguir_camino : MonoBehaviour
     public void Toggle_acelerar(bool acc)
     {
         acelerando = acc;
-        Debug.Log("shit");
     }
 
     public void recuperar_estabilidad()

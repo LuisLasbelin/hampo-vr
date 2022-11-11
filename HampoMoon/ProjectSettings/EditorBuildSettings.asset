@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuUI.unity
     guid: 30a26a66a1ee470428501edcc19d8399
   - enabled: 1
-    path: Assets/Scenes/muelles.unity
+    path: Assets/Scenes/Pruebas/muelles.unity
     guid: 39596ceaffb0c0449afb392c1bf4865c
   - enabled: 1
     path: Assets/Scenes/Muelles_y_carreteras.unity
