@@ -17,6 +17,9 @@ hampomoon_BackUpThisFolder_ButDontShipItWithYourGame
 # Vuforia tgz
 *.tgz
 
+# idea
+idea
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
