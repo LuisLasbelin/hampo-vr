@@ -83,8 +83,7 @@ public class InterfaceControls : MonoBehaviour
 
     void StopVideo()
     {
-        if (videoPlayer) videoPlayer.Stop();
-        videoPlayer.gameObject.SetActive(false);
+        if (videoPlayer) videoPlayer.Pause();
 
         videoButton.image.sprite = playStopImages[0];
 
@@ -94,6 +93,8 @@ public class InterfaceControls : MonoBehaviour
     void ReturnToMenu()
     {
         videoUiContainer.SetActive(false);
+        videoPlayer.Stop();
+        videoPlayer.gameObject.SetActive(false);
         instructionsUiContainer.SetActive(false);
         mainUiContainer.SetActive(true);
     }
