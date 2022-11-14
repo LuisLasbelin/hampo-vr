@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="spooky" size="1.000000 1.000000" />
+    <ImageTarget name="real" size="1.000000 1.000000" />
+    <ImageTarget name="image" size="1.000000 1.000000" />
+    <ImageTarget name="gti" size="1.000000 1.000000" />
+    <ImageTarget name="fast" size="1.000000 1.000000" />
+    <ImageTarget name="arcoiris" size="1.000000 1.000000" />
+    <ImageTarget name="hampomarcador" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
