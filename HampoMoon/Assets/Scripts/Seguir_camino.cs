@@ -13,12 +13,17 @@ public class Seguir_camino : MonoBehaviour
 {
     public PathCreator pathCreator;
 
-    public float velocidad;
-    public float velocidad_maxima;
-    public float aceleracion;
+    private float velocidad;
+    private float velocidad_maxima;
+    public float velocidad_maxima_base;
+    public float velocidad_nitro;
+    private float aceleracion;
+    public float aceleracion_nitro;
+    public float aceleracion_base;
 
-    public float estabilidad;
+    private float estabilidad;
     public float estabilidad_maxima;
+    public float derape;
 
     public Animator rueda_derecha;
     public Animator rueda_iquierda;
@@ -30,11 +35,15 @@ public class Seguir_camino : MonoBehaviour
     private bool estable;
     public GameObject boton_estabilidad;
     public bool acelerando;
+    public bool derrapando;
+    public bool buen_derrape;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        velocidad_maxima = velocidad_maxima_base;
+        aceleracion = aceleracion_base;
         //Make the Unity Action also call your second function
     }
 
@@ -47,33 +56,54 @@ public class Seguir_camino : MonoBehaviour
         transform.rotation = pathCreator.path.GetRotationAtDistance(-distancia_recorrida);
 
         float rotacion_relativa = transform.rotation.y - posicion_anterior.y;
-        float rotacion_alterada = Mathf.Abs(rotacion_relativa * 80);
+        float rotacion_alterada = Mathf.Abs(rotacion_relativa * 40);
 
-        
-        
-        if (rotacion_alterada > 1 && rotacion_alterada < 50)
+        if (!derrapando)
         {
-            //Debug.Log(rotacion_alterada);
+            if (derape > 0)
+            {
+                velocidad_maxima = velocidad_nitro;
+                aceleracion = aceleracion_nitro;
+                derape -= Time.deltaTime / 2;
+                if (derape - Time.deltaTime / 2 < 0)
+                {
+                    velocidad_maxima = velocidad_maxima_base;
+                    aceleracion = aceleracion_base;
+                }
+            }
+        }
+
+        if (rotacion_alterada > 1 && rotacion_alterada < 20)
+        {
             if (rotacion_relativa > 0)
             {
                 rueda_derecha.SetTrigger("Derecha");
                 rueda_iquierda.SetTrigger("Derecha");
-            }else
+            }
+            else
             {
                 rueda_derecha.SetTrigger("Izquierda");
                 rueda_iquierda.SetTrigger("Izquierda");
             }
 
-            if (estabilidad - rotacion_alterada < 0)
+            if (derrapando)
             {
-                estable = false;
-                boton_estabilidad.SetActive(true);
-                estabilidad = 0;
-            }else
-            {
-                estabilidad -= rotacion_alterada;
+                StartCoroutine(tipo_derrape(true));
+                derape += rotacion_alterada * 0.2f;
             }
-            
+            else
+            {
+                if (estabilidad - rotacion_alterada < 0)
+                {
+                    estable = false;
+                    boton_estabilidad.SetActive(true);
+                    estabilidad = 0;
+                }
+                else
+                {
+                    estabilidad -= rotacion_alterada;
+                }
+            }
         }
         else
         {
@@ -86,6 +116,12 @@ public class Seguir_camino : MonoBehaviour
             {
                 estabilidad += 100 * Time.deltaTime;
             }
+
+            if (derrapando)
+            {
+                StartCoroutine(tipo_derrape(false));
+            }
+
             rueda_derecha.SetTrigger("Recto");
             rueda_iquierda.SetTrigger("Recto");
         }
@@ -93,20 +129,48 @@ public class Seguir_camino : MonoBehaviour
 
         if (acelerando && estable)
         {
-            if (velocidad + aceleracion * Time.deltaTime <= velocidad_maxima)
+            if (!derrapando)
             {
-                velocidad += aceleracion * Time.deltaTime;
+                if (velocidad + aceleracion * Time.deltaTime <= velocidad_maxima)
+                {
+                    velocidad += aceleracion * Time.deltaTime;
+                }
+                else
+                {
+                    velocidad = velocidad_maxima;
+                }
             }
             else
             {
-                velocidad = velocidad_maxima;
+                if (buen_derrape)
+                {
+                    if (velocidad - aceleracion * 0.2f * Time.deltaTime >= 0)
+                    {
+                        velocidad -= aceleracion * 0.2f * Time.deltaTime;
+                    }
+                    else
+                    {
+                        velocidad = 0;
+                    }
+                }
+                else
+                {
+                    if (velocidad - aceleracion * 4f * Time.deltaTime >= 0)
+                    {
+                        velocidad -= aceleracion * 4f * Time.deltaTime;
+                    }
+                    else
+                    {
+                        velocidad = 0;
+                    }
+                }
             }
         }
         else
         {
-            if (velocidad - aceleracion * 5 * Time.deltaTime >= 0)
+            if (velocidad - aceleracion * 3 * Time.deltaTime >= 0)
             {
-                velocidad -= aceleracion * 5 * Time.deltaTime;
+                velocidad -= aceleracion * 3 * Time.deltaTime;
             }
             else
             {
@@ -124,11 +188,30 @@ public class Seguir_camino : MonoBehaviour
         acelerando = acc;
     }
 
+    public void Toggle_derrapar(bool acc)
+    {
+        derrapando = acc;
+    }
+
     public void recuperar_estabilidad()
     {
         if (!estable)
         {
             estabilidad += 5;
+        }
+    }
+
+    private bool waiteador_derrape = true;
+
+    IEnumerator tipo_derrape(bool tipo)
+    {
+        if (waiteador_derrape)
+        {
+            buen_derrape = tipo;
+            waiteador_derrape = false;
+            yield return new WaitForSeconds(0.2f);
+
+            waiteador_derrape = true;
         }
     }
 }
