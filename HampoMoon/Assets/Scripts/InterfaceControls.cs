@@ -78,10 +78,10 @@ public class InterfaceControls : MonoBehaviour
         if (videoPlayer) videoPlayer.Play();
         videoButton.image.sprite = playStopImages[1];
         videoButton.image.color = Color.red;
-        videoButton.onClick.AddListener(StopVideo);
+        videoButton.onClick.AddListener(PauseVideo);
     }
 
-    void StopVideo()
+    public void PauseVideo()
     {
         if (videoPlayer) videoPlayer.Pause();
 
@@ -90,10 +90,21 @@ public class InterfaceControls : MonoBehaviour
         videoButton.image.color = Color.green;
         videoButton.onClick.AddListener(PlayVideo);
     }
+
+    void StopVideo()
+    {
+        if (videoPlayer) videoPlayer.Stop();
+
+        videoButton.image.sprite = playStopImages[0];
+
+        videoButton.image.color = Color.green;
+        videoButton.onClick.AddListener(PlayVideo);
+    }
+
     void ReturnToMenu()
     {
         videoUiContainer.SetActive(false);
-        videoPlayer.Stop();
+        StopVideo();
         videoPlayer.gameObject.SetActive(false);
         instructionsUiContainer.SetActive(false);
         mainUiContainer.SetActive(true);

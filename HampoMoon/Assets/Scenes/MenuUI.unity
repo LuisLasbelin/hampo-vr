@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 27404349}
   - component: {fileID: 27404348}
   - component: {fileID: 27404347}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106938681}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MainUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310627065}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InstruccUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 316703206}
   - component: {fileID: 316703205}
   - component: {fileID: 316703204}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: VideoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 344726129}
   - component: {fileID: 344726131}
   - component: {fileID: 344726130}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 352930890}
   - component: {fileID: 352930892}
   - component: {fileID: 352930891}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 397226851}
   - component: {fileID: 397226850}
   - component: {fileID: 397226849}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,14 +886,14 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1123140029}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1798653657
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &398798893
@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 398798897}
   - component: {fileID: 398798896}
   - component: {fileID: 398798895}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 872248213}
   - component: {fileID: 872248212}
   - component: {fileID: 872248211}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Manual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1217,19 @@ MonoBehaviour:
       m_Calls: []
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1370095530}
+        m_TargetAssemblyTypeName: InterfaceControls, Assembly-CSharp
+        m_MethodName: PauseVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &957968260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,7 +1286,7 @@ GameObject:
   - component: {fileID: 995615130}
   - component: {fileID: 995615132}
   - component: {fileID: 995615131}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1351,7 +1363,7 @@ GameObject:
   - component: {fileID: 1029282862}
   - component: {fileID: 1029282861}
   - component: {fileID: 1029282860}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: seleccionar_arco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1496,7 @@ GameObject:
   - component: {fileID: 1088730721}
   - component: {fileID: 1088730720}
   - component: {fileID: 1088730719}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExitButtonI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1751,7 +1763,7 @@ GameObject:
   - component: {fileID: 1232749200}
   - component: {fileID: 1232749199}
   - component: {fileID: 1232749198}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExitButtonV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1883,7 @@ GameObject:
   - component: {fileID: 1243520061}
   - component: {fileID: 1243520063}
   - component: {fileID: 1243520062}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +1959,7 @@ GameObject:
   - component: {fileID: 1246960326}
   - component: {fileID: 1246960328}
   - component: {fileID: 1246960327}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,7 +2036,7 @@ GameObject:
   - component: {fileID: 1301179593}
   - component: {fileID: 1301179592}
   - component: {fileID: 1301179591}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: seleccionar_real
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2156,7 +2168,7 @@ GameObject:
   - component: {fileID: 1359253124}
   - component: {fileID: 1359253126}
   - component: {fileID: 1359253125}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2353,7 +2365,7 @@ GameObject:
   - component: {fileID: 1500415942}
   - component: {fileID: 1500415941}
   - component: {fileID: 1500415940}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Ajustes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2471,7 +2483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1675946900}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: VideoUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2511,7 +2523,7 @@ GameObject:
   - component: {fileID: 1716327895}
   - component: {fileID: 1716327897}
   - component: {fileID: 1716327896}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2587,7 +2599,7 @@ GameObject:
   - component: {fileID: 1792397588}
   - component: {fileID: 1792397590}
   - component: {fileID: 1792397589}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2661,7 +2673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1796892860}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Selector_pista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2710,7 +2722,7 @@ GameObject:
   - component: {fileID: 1866794980}
   - component: {fileID: 1866794982}
   - component: {fileID: 1866794981}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2786,7 +2798,7 @@ GameObject:
   - component: {fileID: 1876045817}
   - component: {fileID: 1876045819}
   - component: {fileID: 1876045818}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2940,7 +2952,7 @@ GameObject:
   - component: {fileID: 2000754321}
   - component: {fileID: 2000754323}
   - component: {fileID: 2000754322}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3017,7 +3029,7 @@ GameObject:
   - component: {fileID: 2027262087}
   - component: {fileID: 2027262086}
   - component: {fileID: 2027262085}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: seleccionar_gti
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Vuforia;
 
-public class EventHandlerTargets : MonoBehaviour, 
+public class EventHandlerTargets : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
