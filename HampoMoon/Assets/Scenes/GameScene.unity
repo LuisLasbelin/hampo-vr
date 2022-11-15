@@ -313,6 +313,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 3
+  gameUiScene: GameUI
+  currLapName: CurrLap
+  maxLapsName: MaxLaps
+  lapsNums:
+  - {fileID: 21300000, guid: 49aec4d6c4423184db133c4e0d0e5c53, type: 3}
+  - {fileID: 21300000, guid: c7e09f4f860ee874187d8ed41ecb71b9, type: 3}
+  - {fileID: 21300000, guid: 1538a754367d54a44bdafc12d6cc586d, type: 3}
+  - {fileID: 21300000, guid: 16151370b25fcea4984cb0e974c9576d, type: 3}
+  - {fileID: 21300000, guid: 9509e5cad3707f6469b81ab16bbdd30b, type: 3}
+  - {fileID: 21300000, guid: 70ef9c562be107e479d9eb978a81fd70, type: 3}
   laps: 0
   maxLaps: 5
 --- !u!4 &1200722121
