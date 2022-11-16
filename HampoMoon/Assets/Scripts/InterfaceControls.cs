@@ -23,7 +23,7 @@ public class InterfaceControls : MonoBehaviour
     public Button exitInstructionsButton;
     public Button gameButton;
     public Button instructionsButton;
-    public string Escena_Minijuego;
+    public string GameScene;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class InterfaceControls : MonoBehaviour
 
     void OpenGame()
     {
-        SceneManager.LoadScene(Escena_Minijuego, LoadSceneMode.Single);
+        SceneManager.LoadScene(GameScene, LoadSceneMode.Single);
     }
 
     void PlayVideo()

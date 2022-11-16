@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1168,7 +1168,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1370095529}
   - {fileID: 1204853743}
   m_Father: {fileID: 1123140030}
   m_RootOrder: 0
@@ -1506,7 +1505,7 @@ Transform:
   m_Children:
   - {fileID: 957968257}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204853742
 GameObject:
@@ -1539,7 +1538,7 @@ Transform:
   - {fileID: 215510277}
   - {fileID: 397226848}
   m_Father: {fileID: 957968257}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232749196
 GameObject:
@@ -1691,8 +1690,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 957968257}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1370095530
 MonoBehaviour:
@@ -1719,7 +1718,7 @@ MonoBehaviour:
   exitInstructionsButton: {fileID: 1088730719}
   gameButton: {fileID: 27404347}
   instructionsButton: {fileID: 872248211}
-  Escena_Minijuego: Minijuego
+  GameScene: GameScene
 --- !u!1 &1500415938
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,9 @@ public class Controlador_escena_selector : MonoBehaviour
     void Start()
     {
         boton_iniciar_carrera.onClick.AddListener(iniciar_carrera);
+
+        // Countdown start
+        GameControl.instance.UpdateGameState(GameState.Countdown);
     }
     
     void Update()

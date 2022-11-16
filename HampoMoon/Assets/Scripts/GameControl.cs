@@ -9,6 +9,8 @@ public class GameControl : MonoBehaviour
     public static GameControl instance;
     public GameState gameState;
     public string gameUiScene = "GameUI";
+    public string gameScene = "Minijuego";
+
     public string currLapName = "CurrLap";
     Image currLapImage;
     public string maxLapsName = "MaxLaps";
@@ -22,7 +24,7 @@ public class GameControl : MonoBehaviour
     {
         // Asegura que solo hay 1
         instance = this;
-        SceneManager.LoadScene(gameUiScene, LoadSceneMode.Additive);
+        SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
     }
 
     private void Start()
@@ -60,6 +62,8 @@ public class GameControl : MonoBehaviour
             case GameState.SelectedCircuit:
                 break;
             case GameState.Countdown:
+                SceneManager.LoadScene(gameUiScene, LoadSceneMode.Additive);
+                Debug.Log("Game UI loaded");
                 break;
             case GameState.Race:
                 Debug.Log("Race start");
@@ -69,8 +73,6 @@ public class GameControl : MonoBehaviour
                 break;
         }
     }
-
-    
 }
 
 public enum GameState

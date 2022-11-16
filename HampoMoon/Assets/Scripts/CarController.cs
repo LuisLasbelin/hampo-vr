@@ -25,76 +25,82 @@ public class CarController : MonoBehaviour
         layerMask = 1 << LayerMask.NameToLayer("Vehicle");
         layerMask = ~layerMask;
         body.centerOfMass = new Vector3 (0,-1.0f,0);
-
     }
 
     private void Update()
     {
-        UnityEngine.InputSystem.Gamepad gamepad = UnityEngine.InputSystem.Gamepad.current;
-        if (gamepad == null) { 
-         
-            return; // No gamepad connected.
-        }
-        Vector2 move = gamepad.leftStick.ReadValue();
-        avance = move.y * coefAvance;
-        giro = move.x * coefGiro;
+        // Solo debe funcionar en carrera
+        if (GameControl.instance.gameState == GameState.Race)
+        {
+            UnityEngine.InputSystem.Gamepad gamepad = UnityEngine.InputSystem.Gamepad.current;
+            if (gamepad == null)
+            {
 
-        /*if (avance != avance_anterior)
-        {
-            switch (avance)
-            {
-                case > 0:
-                    m_animimator.SetTrigger("avanzar");
-                    break;
-                case < 0:
-                    m_animimator.SetTrigger("retroceder");
-                    break;
-                default:
-                    m_animimator.SetTrigger("parar");
-                    break;
+                return; // No gamepad connected.
             }
-        }*/
-        avance_anterior = avance;
-        /*
-        if (giro != giro_anterior)
-        {
-            switch (giro)
+            Vector2 move = gamepad.leftStick.ReadValue();
+            avance = move.y * coefAvance;
+            giro = move.x * coefGiro;
+
+            /*if (avance != avance_anterior)
             {
-                case > 0.1f:
-                    m_animimator.SetTrigger("derecha");
-                    break;
-                case < -0.1f:
-                    m_animimator.SetTrigger("izquierda");
-                    break;
-                default:
-                    m_animimator.SetTrigger("recto");
-                    break;
-            }
-        }*/
-        giro_anterior = giro;
+                switch (avance)
+                {
+                    case > 0:
+                        m_animimator.SetTrigger("avanzar");
+                        break;
+                    case < 0:
+                        m_animimator.SetTrigger("retroceder");
+                        break;
+                    default:
+                        m_animimator.SetTrigger("parar");
+                        break;
+                }
+            }*/
+            avance_anterior = avance;
+            /*
+            if (giro != giro_anterior)
+            {
+                switch (giro)
+                {
+                    case > 0.1f:
+                        m_animimator.SetTrigger("derecha");
+                        break;
+                    case < -0.1f:
+                        m_animimator.SetTrigger("izquierda");
+                        break;
+                    default:
+                        m_animimator.SetTrigger("recto");
+                        break;
+                }
+            }*/
+            giro_anterior = giro;
+        }
     }
 
     private void FixedUpdate()
     {
-        for (int i = 0; i < contactoSuelo .Length; i++)
+        // Solo debe funcionar en carrera
+        if (GameControl.instance.gameState == GameState.Race)
         {
-            contactoSuelo[i].GetComponent<LineRenderer>().SetPosition(0, contactoSuelo[i].transform.position);
-            RaycastHit hit;
-            if (Physics.Raycast(contactoSuelo[i].transform.position, -Vector3.up, out hit, alturaMuelle, layerMask))
+            for (int i = 0; i < contactoSuelo.Length; i++)
             {
-                body.AddForceAtPosition(contactoSuelo[i].transform.up * gravityForce * (((alturaMuelle - hit.distance) / alturaMuelle)), contactoSuelo[i].transform.position);
-                contactoSuelo[i].GetComponent<LineRenderer>().SetPosition(1, hit.point);
+                contactoSuelo[i].GetComponent<LineRenderer>().SetPosition(0, contactoSuelo[i].transform.position);
+                RaycastHit hit;
+                if (Physics.Raycast(contactoSuelo[i].transform.position, -Vector3.up, out hit, alturaMuelle, layerMask))
+                {
+                    body.AddForceAtPosition(contactoSuelo[i].transform.up * gravityForce * (((alturaMuelle - hit.distance) / alturaMuelle)), contactoSuelo[i].transform.position);
+                    contactoSuelo[i].GetComponent<LineRenderer>().SetPosition(1, hit.point);
+                }
+                else
+                {
+                    body.AddForceAtPosition(contactoSuelo[i].transform.up * -gravityForce, contactoSuelo[i].transform.position);
+                }
             }
-            else
-            {
-                body.AddForceAtPosition(contactoSuelo[i].transform.up * -gravityForce, contactoSuelo[i].transform.position);
-            }
+
+            body.AddForce(transform.forward * avance * coefAvance);
+            body.AddRelativeTorque(Vector3.up * giro * coefGiro);
         }
-
-        body.AddForce(transform.forward * avance * coefAvance);
-        body.AddRelativeTorque(Vector3.up * giro * coefGiro);
-
-
     }
 
     void OnDrawGizmos()
