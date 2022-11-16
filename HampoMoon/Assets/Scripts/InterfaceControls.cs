@@ -23,6 +23,7 @@ public class InterfaceControls : MonoBehaviour
     public Button exitInstructionsButton;
     public Button gameButton;
     public Button instructionsButton;
+    public Button exitButton;
     public string GameScene;
 
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class InterfaceControls : MonoBehaviour
         introButton.onClick.AddListener(OpenVideoMenu);
         gameButton.onClick.AddListener(OpenGame);
         instructionsButton.onClick.AddListener(OpenInstrucMenu);
+        exitButton.onClick.AddListener(ExitGame);
     }
 
     void OpenGame()
@@ -101,5 +103,10 @@ public class InterfaceControls : MonoBehaviour
     {
         instructionsUiContainer.SetActive(true);
         mainUiContainer.SetActive(false);
+    }
+
+    void ExitGame()
+    {
+        Application.Quit();
     }
 }

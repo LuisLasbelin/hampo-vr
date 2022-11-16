@@ -8,9 +8,7 @@ public class GameControl : MonoBehaviour
 {
     public static GameControl instance;
     public GameState gameState;
-    public string gameUiScene = "GameUI";
     public string gameScene = "Minijuego";
-
     public string currLapName = "CurrLap";
     Image currLapImage;
     public string maxLapsName = "MaxLaps";
@@ -55,15 +53,7 @@ public class GameControl : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.SelectedBoth:
-                break;
-            case GameState.SelectedCar:
-                break;
-            case GameState.SelectedCircuit:
-                break;
             case GameState.Countdown:
-                SceneManager.LoadScene(gameUiScene, LoadSceneMode.Additive);
-                Debug.Log("Game UI loaded");
                 break;
             case GameState.Race:
                 Debug.Log("Race start");
@@ -71,16 +61,17 @@ public class GameControl : MonoBehaviour
             case GameState.EndRace:
                 Debug.Log("Race ended");
                 break;
+            case GameState.Paused:
+                break;
         }
     }
 }
 
 public enum GameState
 {
-    SelectedBoth,
-    SelectedCar,
-    SelectedCircuit,
+    Selecting,
     Countdown,
     Race,
-    EndRace
+    EndRace,
+    Paused
 }
