@@ -30,16 +30,18 @@ public class Seguir_camino : MonoBehaviour
 
     public Image imagen;
 
-    public float distancia_recorrida;
+    public float distancia_recorrida = 0f;
 
     private bool estable;
     public GameObject boton_estabilidad;
 
     public bool ia;
-    
+
     public bool acelerando;
     public bool derrapando;
     public bool buen_derrape;
+
+    public int pos = 1;
 
 
     // Start is called before the first frame update
@@ -186,16 +188,14 @@ public class Seguir_camino : MonoBehaviour
             imagen.fillAmount = estabilidad / estabilidad_maxima;
             imagen.color = new Color(1 - estabilidad / estabilidad_maxima, estabilidad / estabilidad_maxima, 0);
         }
-
     }
 
     public void Toggle_acelerar(bool acc)
     {
-        if (GameControl.instance.gameState==GameState.Race)
+        if (GameControl.instance.gameState == GameState.Race)
         {
             acelerando = acc;
         }
-        
     }
 
     public void Toggle_derrapar(bool acc)
