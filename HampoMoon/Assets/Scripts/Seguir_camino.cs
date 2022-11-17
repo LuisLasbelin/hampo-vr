@@ -42,6 +42,10 @@ public class Seguir_camino : MonoBehaviour
     public bool buen_derrape;
 
     public int pos = 1;
+    
+    
+    public int laps = 0;
+    public GameControl control;
 
 
     // Start is called before the first frame update
@@ -49,6 +53,7 @@ public class Seguir_camino : MonoBehaviour
     {
         velocidad_maxima = velocidad_maxima_base;
         aceleracion = aceleracion_base;
+        control = FindObjectOfType<GameControl>();
         //Make the Unity Action also call your second function
     }
 
@@ -222,6 +227,18 @@ public class Seguir_camino : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
 
             waiteador_derrape = true;
+        }
+    }
+    
+    public void NewLap()
+    {
+        laps++;
+
+        // Al llegar al maximo de vueltas se termina la carrera
+        if (laps >= control.maxLaps)
+        {
+            control.UpdateGameState(GameState.EndRace);
+            acelerando = false;
         }
     }
 }

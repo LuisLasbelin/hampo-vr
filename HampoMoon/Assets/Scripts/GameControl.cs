@@ -12,7 +12,7 @@ public class GameControl : MonoBehaviour
     public string gameScene = "Minijuego";
     public Sprite[] lapsNums;
 
-    public int laps = 0;
+
     public int maxLaps = 5;
 
     public Action cuando_nueva_vuelta;
@@ -22,15 +22,6 @@ public class GameControl : MonoBehaviour
         // Asegura que solo hay 1
         instance = this;
         SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
-    }
-
-    public void NewLap()
-    {
-        laps++;
-
-
-        // Al llegar al maximo de vueltas se termina la carrera
-        if (laps >= maxLaps) UpdateGameState(GameState.EndRace);
     }
 
     /**

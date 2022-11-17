@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using PathCreation;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Controlador_humano : MonoBehaviour
@@ -13,6 +14,7 @@ public class Controlador_humano : MonoBehaviour
 
     [SerializeField] private GameObject ui;
     [SerializeField] private GameObject ui_pausa;
+    [SerializeField] private GameObject ui_final;
 
     private Controlador_pistas controladorPistas;
     private Controlador_coches controladorCoches;
@@ -21,6 +23,8 @@ public class Controlador_humano : MonoBehaviour
     private CountdownControl countdownControl;
     private GameControl control;
 
+    [SerializeField] private Image imagen_pos;
+    [SerializeField] private Image imagen_pos_final;
     [SerializeField] private Image imagen_vueltas;
     [SerializeField] private Image imagen_max_vueltas;
     [SerializeField] private Image imagen_contador;
@@ -40,9 +44,11 @@ public class Controlador_humano : MonoBehaviour
         escenaSelector.cuando_inicia_carrera += asignar_path;
         countdownControl.cuando_llegue_a_zero += quitar_cartel;
         ui.SetActive(false);
+        ui_pausa.SetActive(false);
+        ui_final.SetActive(false);
 
-
-        imagen_vueltas.sprite = control.lapsNums[control.laps];
+        imagen_vueltas.sprite = control.lapsNums[seguidor.laps];
+        imagen_pos.sprite = control.lapsNums[seguidor.pos];
 
         imagen_max_vueltas.sprite = control.lapsNums[control.maxLaps];
     }
@@ -55,20 +61,32 @@ public class Controlador_humano : MonoBehaviour
     private void Update()
     {
         imagen_contador.sprite = countdownControl.numSprites[countdownControl.currNumber];
-        imagen_vueltas.sprite = control.lapsNums[control.laps];
-        if (GameControl.instance.gameState == GameState.Race)
-        {
-            ui.SetActive(true);
-        }
-
+        imagen_pos.sprite = control.lapsNums[seguidor.pos];
+        imagen_vueltas.sprite = control.lapsNums[seguidor.laps];
+        
         boton_estabilidad.SetActive(!seguidor.estable);
 
-        if (GameControl.instance.gameState == GameState.Paused)
+        if (GameControl.instance.gameState == GameState.Race)
         {
+            ui_final.SetActive(false);
+            ui.SetActive(true);
+        }
+        else if (GameControl.instance.gameState == GameState.Paused)
+        {
+            ui_final.SetActive(false);
+            ui_final.SetActive(false);
             ui_pausa.SetActive(true);
+        }
+        else if (GameControl.instance.gameState == GameState.EndRace)
+        {
+            imagen_pos_final.sprite = control.lapsNums[seguidor.pos];
+            ui.SetActive(true);
+            ui_pausa.SetActive(false);
+            ui_final.SetActive(true);
         }
         else
         {
+            ui_final.SetActive(false);
             ui_pausa.SetActive(false);
         }
     }
@@ -86,5 +104,25 @@ public class Controlador_humano : MonoBehaviour
     {
         yield return new WaitForSeconds(segundos);
         imagen_contador.enabled = false;
+    }
+
+    private GameState prev_gamestate;
+
+    public void pausar_game(bool pausar)
+    {
+        if (pausar)
+        {
+            prev_gamestate = GameControl.instance.gameState;
+            GameControl.instance.UpdateGameState(GameState.Paused);
+        }
+        else
+        {
+            GameControl.instance.UpdateGameState(prev_gamestate);
+        }
+    }
+
+    public void volver_menu()
+    {
+        SceneManager.LoadScene("MenuUI", LoadSceneMode.Single);
     }
 }
