@@ -9,7 +9,7 @@ public class Controlador_interfaz : MonoBehaviour
 {
     //[SerializeField] private GameObject Interfaz_carrera;
     [SerializeField] private GameObject Interfaz_seleccion;
-    [SerializeField] private GameObject Interfaz_pausa;
+    // [SerializeField] private GameObject Interfaz_pausa;
     [SerializeField] private Button boton_iniciar_carrera;
 
     public string mainMenu;
@@ -21,7 +21,7 @@ public class Controlador_interfaz : MonoBehaviour
     {
         
         escenaSelector = FindObjectOfType<Controlador_escena_selector>();
-        Interfaz_pausa.SetActive(false);
+        
         Interfaz_seleccion.SetActive(true);
         //Interfaz_carrera.SetActive(false);
         boton_iniciar_carrera.onClick.AddListener(escenaSelector.iniciar_carrera);
@@ -44,13 +44,13 @@ public class Controlador_interfaz : MonoBehaviour
     public void PauseGame()
     {
         GameControl.instance.UpdateGameState(GameState.Paused);
-        Interfaz_pausa.SetActive(true);
+        //Interfaz_pausa.SetActive(true);
     }
 
     public void Continue()
     {
         GameControl.instance.UpdateGameState(GameState.Race);
-        Interfaz_pausa.SetActive(false);
+        //Interfaz_pausa.SetActive(false);
     }
 
     public void Return()

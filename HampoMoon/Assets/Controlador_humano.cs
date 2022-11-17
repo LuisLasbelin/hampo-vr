@@ -8,14 +8,15 @@ using UnityEngine.UI;
 public class Controlador_humano : MonoBehaviour
 {
     [SerializeField] private GameObject[] coches;
-    
+
     private Seguir_camino seguidor;
 
     [SerializeField] private GameObject ui;
-    
+    [SerializeField] private GameObject ui_pausa;
+
     private Controlador_pistas controladorPistas;
     private Controlador_coches controladorCoches;
-    
+
     private Controlador_escena_selector escenaSelector;
     private CountdownControl countdownControl;
     private GameControl control;
@@ -23,7 +24,9 @@ public class Controlador_humano : MonoBehaviour
     [SerializeField] private Image imagen_vueltas;
     [SerializeField] private Image imagen_max_vueltas;
     [SerializeField] private Image imagen_contador;
-    
+
+    public GameObject boton_estabilidad;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +40,8 @@ public class Controlador_humano : MonoBehaviour
         escenaSelector.cuando_inicia_carrera += asignar_path;
         countdownControl.cuando_llegue_a_zero += quitar_cartel;
         ui.SetActive(false);
-        
-        
+
+
         imagen_vueltas.sprite = control.lapsNums[control.laps];
 
         imagen_max_vueltas.sprite = control.lapsNums[control.maxLaps];
@@ -48,7 +51,7 @@ public class Controlador_humano : MonoBehaviour
     {
         StartCoroutine(quitar_cartel_start(1.5f));
     }
-    
+
     private void Update()
     {
         imagen_contador.sprite = countdownControl.numSprites[countdownControl.currNumber];
@@ -57,16 +60,28 @@ public class Controlador_humano : MonoBehaviour
         {
             ui.SetActive(true);
         }
+
+        boton_estabilidad.SetActive(!seguidor.estable);
+
+        if (GameControl.instance.gameState == GameState.Paused)
+        {
+            ui_pausa.SetActive(true);
+        }
+        else
+        {
+            ui_pausa.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     public void asignar_path()
     {
-        seguidor.pathCreator = controladorPistas.pistas[controladorPistas.pista_seleccionada].GetComponentInChildren<PathCreator>();
+        seguidor.pathCreator = controladorPistas.pistas[controladorPistas.pista_seleccionada]
+            .GetComponentInChildren<PathCreator>();
         coches[controladorCoches.coche_seleccionado].SetActive(true);
         ui.SetActive(true);
     }
-    
+
     IEnumerator quitar_cartel_start(float segundos)
     {
         yield return new WaitForSeconds(segundos);

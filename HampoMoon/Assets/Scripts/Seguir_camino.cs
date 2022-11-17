@@ -32,8 +32,8 @@ public class Seguir_camino : MonoBehaviour
 
     public float distancia_recorrida = 0f;
 
-    private bool estable;
-    public GameObject boton_estabilidad;
+    public bool estable;
+    // public GameObject boton_estabilidad;
 
     public bool ia;
 
@@ -101,7 +101,7 @@ public class Seguir_camino : MonoBehaviour
                 if (estabilidad - rotacion_alterada < 0)
                 {
                     estable = false;
-                    boton_estabilidad.SetActive(true);
+                    // boton_estabilidad.SetActive(true);
                     estabilidad = 0;
                 }
                 else
@@ -115,7 +115,7 @@ public class Seguir_camino : MonoBehaviour
             if (estabilidad + 1 * Time.deltaTime > estabilidad_maxima)
             {
                 estable = true;
-                boton_estabilidad.SetActive(false);
+                //boton_estabilidad.SetActive(false);
             }
             else
             {

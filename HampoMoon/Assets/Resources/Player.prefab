@@ -8479,11 +8479,12 @@ MonoBehaviour:
   rueda_iquierda: {fileID: 2159764399044557461}
   imagen: {fileID: 2159764398502224276}
   distancia_recorrida: 0
-  boton_estabilidad: {fileID: 2159764398627251682}
+  estable: 0
   ia: 0
   acelerando: 0
   derrapando: 0
   buen_derrape: 0
+  pos: 1
 --- !u!114 &3551392569677330655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8501,9 +8502,11 @@ MonoBehaviour:
   - {fileID: 2159764400166935495}
   - {fileID: 2159764399270182882}
   ui: {fileID: 2159764398864953103}
+  ui_pausa: {fileID: 2159764399861611569}
   imagen_vueltas: {fileID: 2159764400002927179}
   imagen_max_vueltas: {fileID: 2159764398643917385}
   imagen_contador: {fileID: 2159764400134376272}
+  boton_estabilidad: {fileID: 2159764398627251682}
 --- !u!1 &5049435224508576265
 GameObject:
   m_ObjectHideFlags: 0
