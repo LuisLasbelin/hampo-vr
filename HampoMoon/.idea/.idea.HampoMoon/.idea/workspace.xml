@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05292b19-b454-415e-a1cd-f57f501a5bd4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HampoMoon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HampoMoon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Controlador_humano.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controlador_humano.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Controlador_humano.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controlador_humano.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Controlador_posiciones.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controlador_posiciones.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Luz freno.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Luz freno.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonLibs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonLibs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonLibs/Metro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonLibs/Metro.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameUI.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameUI.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_arcoiris.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_arcoiris.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_reales.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_reales.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_y_carreteras.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_y_carreteras.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FinishLineCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FinishLineCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Seguir_camino.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Seguir_camino.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="05292b19-b454-415e-a1cd-f57f501a5bd4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668718099856</updated>
-      <workItem from="1668718111898" duration="7094000" />
+      <workItem from="1668718111898" duration="7498000" />
     </task>
     <servers />
   </component>

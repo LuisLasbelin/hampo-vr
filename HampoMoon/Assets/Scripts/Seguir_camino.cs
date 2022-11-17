@@ -62,8 +62,12 @@ public class Seguir_camino : MonoBehaviour
     {
         distancia_recorrida += velocidad * Time.deltaTime;
         Quaternion posicion_anterior = transform.rotation;
-        transform.position = pathCreator.path.GetPointAtDistance(-distancia_recorrida);
-        transform.rotation = pathCreator.path.GetRotationAtDistance(-distancia_recorrida);
+        if (pathCreator != null)
+        {
+            transform.position = pathCreator.path.GetPointAtDistance(-distancia_recorrida);
+            transform.rotation = pathCreator.path.GetRotationAtDistance(-distancia_recorrida);
+        }
+
 
         float rotacion_relativa = transform.rotation.y - posicion_anterior.y;
         float rotacion_alterada = Mathf.Abs(rotacion_relativa * 40);
