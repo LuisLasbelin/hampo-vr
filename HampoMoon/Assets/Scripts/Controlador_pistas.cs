@@ -24,7 +24,7 @@ public class Controlador_pistas : MonoBehaviour
         escenaSelector = FindObjectOfType<Controlador_escena_selector>();
         Seleccionada = true;
         pista_seleccionada = i;
-        seguidor_de_caminos.pathCreator = pistas[pista_seleccionada].GetComponentInChildren<PathCreator>();
+        //seguidor_de_caminos.pathCreator = pistas[pista_seleccionada].GetComponentInChildren<PathCreator>();
         placeholder_imagen_pista.sprite = Imagenes_pistas[pista_seleccionada];
         
         escenaSelector.cuando_inicia_carrera += cargar_pista;

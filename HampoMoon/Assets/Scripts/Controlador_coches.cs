@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Controlador_coches : MonoBehaviour
 {
     [SerializeField] private GameObject[] coches;
-    private int coche_seleccionado;
+    public int coche_seleccionado;
 
 
     [SerializeField] private Image placeholder_imagen_coche; 
@@ -33,6 +33,6 @@ public class Controlador_coches : MonoBehaviour
 
     public void cargar_coche()
     {
-        coches[coche_seleccionado].SetActive(true);
+        //coches[coche_seleccionado].SetActive(true);
     }
 }

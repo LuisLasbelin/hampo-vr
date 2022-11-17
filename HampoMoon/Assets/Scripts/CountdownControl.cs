@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,12 @@ public class CountdownControl : MonoBehaviour
     public int number = 3;
     public bool counting = false;
     float currTime = 0;
-    int currNumber = 0;
+    public int currNumber = 0;
 
     public Sprite[] numSprites;
-    Image numImage;
-    public string numImageUiName = "NumImage";
+    //Image numImage;
 
+    public Action cuando_llegue_a_zero;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class CountdownControl : MonoBehaviour
         currTime = timeBetween;
         currNumber = number;
 
-        numImage = GameObject.Find(numImageUiName).GetComponent<Image>();
+        //numImage = GameObject.Find(numImageUiName).GetComponent<Image>();
     }
 
     private void Update()
@@ -39,7 +40,7 @@ public class CountdownControl : MonoBehaviour
             {
                 currTime = timeBetween;
                 currNumber -= 1;
-                numImage.sprite = numSprites[currNumber];
+                // numImage.sprite = numSprites[currNumber];
                 // Debug.Log("Count: " + currNumber);
             }
         }
@@ -48,13 +49,11 @@ public class CountdownControl : MonoBehaviour
         {
             GameControl.instance.UpdateGameState(GameState.Race);
             counting = false;
-            StartCoroutine(quitar_cartel_start(1.5f));
+            
+            cuando_llegue_a_zero?.Invoke();
+            
         }
     }
 
-    IEnumerator quitar_cartel_start(float segundos)
-    {
-        yield return new WaitForSeconds(segundos);
-        numImage.enabled = false;
-    }
+
 }
