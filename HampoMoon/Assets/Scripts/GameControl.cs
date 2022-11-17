@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class GameControl : MonoBehaviour
     public int laps = 0;
     public int maxLaps = 5;
 
+    public Action cuando_nueva_vuelta;
+    
     void Awake()
     {
         // Asegura que solo hay 1

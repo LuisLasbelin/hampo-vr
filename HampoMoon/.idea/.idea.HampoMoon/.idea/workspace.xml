@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="05292b19-b454-415e-a1cd-f57f501a5bd4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muelles_y_carreteras.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Muelles_y_carreteras.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QCAR/somedata16" beforeDir="false" afterPath="$PROJECT_DIR$/QCAR/somedata16" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Controlador_humano.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Seguir_camino.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+</project>

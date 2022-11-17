@@ -30,10 +30,13 @@ public class Seguir_camino : MonoBehaviour
 
     public Image imagen;
 
-    private float distancia_recorrida;
+    public float distancia_recorrida;
 
     private bool estable;
     public GameObject boton_estabilidad;
+
+    public bool ia;
+    
     public bool acelerando;
     public bool derrapando;
     public bool buen_derrape;
@@ -107,14 +110,14 @@ public class Seguir_camino : MonoBehaviour
         }
         else
         {
-            if (estabilidad + 1 * Time.deltaTime > 100)
+            if (estabilidad + 1 * Time.deltaTime > estabilidad_maxima)
             {
                 estable = true;
                 boton_estabilidad.SetActive(false);
             }
             else
             {
-                estabilidad += 100 * Time.deltaTime;
+                estabilidad += estabilidad_maxima * Time.deltaTime;
             }
 
             if (derrapando)
@@ -178,14 +181,21 @@ public class Seguir_camino : MonoBehaviour
             }
         }
 
+        if (!ia)
+        {
+            imagen.fillAmount = estabilidad / estabilidad_maxima;
+            imagen.color = new Color(1 - estabilidad / estabilidad_maxima, estabilidad / estabilidad_maxima, 0);
+        }
 
-        imagen.fillAmount = estabilidad / 100;
-        imagen.color = new Color(1 - estabilidad / 100, estabilidad / 100, 0);
     }
 
     public void Toggle_acelerar(bool acc)
     {
-        acelerando = acc;
+        if (GameControl.instance.gameState==GameState.Race)
+        {
+            acelerando = acc;
+        }
+        
     }
 
     public void Toggle_derrapar(bool acc)

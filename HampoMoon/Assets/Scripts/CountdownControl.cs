@@ -27,7 +27,6 @@ public class CountdownControl : MonoBehaviour
 
     private void Update()
     {
-
         if (GameControl.instance.gameState == GameState.Countdown)
         {
             counting = true;
@@ -41,7 +40,7 @@ public class CountdownControl : MonoBehaviour
                 currTime = timeBetween;
                 currNumber -= 1;
                 numImage.sprite = numSprites[currNumber];
-                Debug.Log("Count: " + currNumber);
+                // Debug.Log("Count: " + currNumber);
             }
         }
 
@@ -49,6 +48,13 @@ public class CountdownControl : MonoBehaviour
         {
             GameControl.instance.UpdateGameState(GameState.Race);
             counting = false;
+            StartCoroutine(quitar_cartel_start(1.5f));
         }
+    }
+
+    IEnumerator quitar_cartel_start(float segundos)
+    {
+        yield return new WaitForSeconds(segundos);
+        numImage.enabled = false;
     }
 }
