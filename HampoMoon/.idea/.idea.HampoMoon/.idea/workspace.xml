@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05292b19-b454-415e-a1cd-f57f501a5bd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HampoMoon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HampoMoon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Controlador_humano.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controlador_humano.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/sueloTrans.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/sueloTrans.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +12,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Controlador_humano.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Controlador_posiciones.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Seguir_camino.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -75,6 +71,9 @@
       <option name="presentableId" value="Default" />
       <updated>1668718099856</updated>
       <workItem from="1668718111898" duration="7498000" />
+      <workItem from="1668763840634" duration="2224000" />
+      <workItem from="1668768970893" duration="22000" />
+      <workItem from="1668769013670" duration="6000" />
     </task>
     <servers />
   </component>
