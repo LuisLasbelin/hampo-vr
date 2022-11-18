@@ -5975,7 +5975,7 @@ MonoBehaviour:
   imagen_vueltas: {fileID: 8747620887685935710}
   imagen_max_vueltas: {fileID: 8747620888071866972}
   imagen_contador: {fileID: 8747620887553930053}
-  boton_estabilidad: {fileID: 8747620887202628420}
+  boton_estabilidad: {fileID: 8747620888054947319}
 --- !u!1 &6936419146325348507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6291,7 +6291,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7247657497975617843}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6299,8 +6299,8 @@ RectTransform:
   - {fileID: 2991638226769987366}
   - {fileID: 259475586374220520}
   - {fileID: 8480145309129479451}
-  m_Father: {fileID: 8747620888823355158}
-  m_RootOrder: 9
+  m_Father: {fileID: 8747620887905269507}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6704,7 +6704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8747620886752920615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8442,6 +8442,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6656784965793034863}
   - {fileID: 8747620888823355158}
   m_Father: {fileID: 8747620887805642437}
   m_RootOrder: 0
@@ -9409,9 +9410,8 @@ RectTransform:
   - {fileID: 8747620887354117623}
   - {fileID: 8747620888054947318}
   - {fileID: 8747620886752920615}
-  - {fileID: 6656784965793034863}
   m_Father: {fileID: 8747620887905269507}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

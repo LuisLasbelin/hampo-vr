@@ -71,23 +71,12 @@ public class Controlador_humano : MonoBehaviour
             ui_final.SetActive(false);
             ui.SetActive(true);
         }
-        else if (GameControl.instance.gameState == GameState.Paused)
-        {
-            ui_final.SetActive(false);
-            ui_final.SetActive(false);
-            ui_pausa.SetActive(true);
-        }
-        else if (GameControl.instance.gameState == GameState.EndRace)
+        if (GameControl.instance.gameState == GameState.EndRace)
         {
             imagen_pos_final.sprite = control.lapsNums[seguidor.pos];
-            ui.SetActive(true);
+            ui.SetActive(false);
             ui_pausa.SetActive(false);
             ui_final.SetActive(true);
-        }
-        else
-        {
-            ui_final.SetActive(false);
-            ui_pausa.SetActive(false);
         }
     }
 
@@ -110,6 +99,7 @@ public class Controlador_humano : MonoBehaviour
 
     public void pausar_game(bool pausar)
     {
+        ui_pausa.SetActive(pausar);
         if (pausar)
         {
             prev_gamestate = GameControl.instance.gameState;
