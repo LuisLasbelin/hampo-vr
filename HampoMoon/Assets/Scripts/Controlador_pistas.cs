@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PathCreation;
@@ -14,11 +15,17 @@ public class Controlador_pistas : MonoBehaviour
     [SerializeField] private Image placeholder_imagen_pista;
     [SerializeField] private Sprite[] Imagenes_pistas;
 
+    [SerializeField] private Image Imagen_aviso_target;
+
     public bool Seleccionada;
-    
+
     private Controlador_escena_selector escenaSelector;
-    
-    
+
+    private void Update()
+    {
+        Imagen_aviso_target.enabled = !Seleccionada;
+    }
+
     public void seleccionar_pista(int i)
     {
         escenaSelector = FindObjectOfType<Controlador_escena_selector>();
@@ -26,15 +33,12 @@ public class Controlador_pistas : MonoBehaviour
         pista_seleccionada = i;
         //seguidor_de_caminos.pathCreator = pistas[pista_seleccionada].GetComponentInChildren<PathCreator>();
         placeholder_imagen_pista.sprite = Imagenes_pistas[pista_seleccionada];
-        
-        escenaSelector.cuando_inicia_carrera += cargar_pista;
 
-        
+        escenaSelector.cuando_inicia_carrera += cargar_pista;
     }
-    
+
     public void cargar_pista()
     {
         pistas[pista_seleccionada].SetActive(true);
-        
     }
 }

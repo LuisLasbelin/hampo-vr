@@ -47,6 +47,8 @@ public class Seguir_camino : MonoBehaviour
     public int laps = 0;
     public GameControl control;
 
+    public AudioSource sonido_derrape;
+
 
     // Start is called before the first frame update
     void Start()
@@ -210,6 +212,8 @@ public class Seguir_camino : MonoBehaviour
     public void Toggle_derrapar(bool acc)
     {
         derrapando = acc;
+        sonido_derrape.enabled = acc;
+
     }
 
     public void recuperar_estabilidad()

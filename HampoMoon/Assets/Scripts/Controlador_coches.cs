@@ -14,6 +14,8 @@ public class Controlador_coches : MonoBehaviour
     [SerializeField] private Image placeholder_imagen_coche; 
     [SerializeField] private Sprite[] Imagenes_coches;
 
+    [SerializeField] private Image Imagen_aviso_target;
+
     private Controlador_escena_selector escenaSelector;
     
     public bool Seleccionada;
@@ -22,6 +24,12 @@ public class Controlador_coches : MonoBehaviour
     {
         escenaSelector = FindObjectOfType<Controlador_escena_selector>();
         escenaSelector.cuando_inicia_carrera += cargar_coche;
+    }
+
+    private void Update()
+    {
+        Imagen_aviso_target.enabled = !Seleccionada;
+
     }
 
     public void seleccionar_coche(int i)
