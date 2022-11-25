@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Joker2" size="1.000000 0.562500" />
+    <ImageTarget name="Joker-Wallpaper" size="1.000000 0.562500" />
+    <ImageTarget name="PixarTOYSTORY" size="1.000000 1.166287" />
+    <ImageTarget name="Joker" size="1024.000000 1461.000000" />
+  </Tracking>
+</QCARConfig>

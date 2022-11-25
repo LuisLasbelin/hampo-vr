@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Spookyrcedes_CARD" size="1.000000 1.491228" />
+    <ImageTarget name="FUTURATI_CARD" size="1.000000 1.491228" />
+    <ImageTarget name="SENDA_RAINBOW_CARD" size="1.000000 1.491228" />
+    <ImageTarget name="SCALEXTRIC_CARD" size="1.000000 1.491228" />
+    <ImageTarget name="SAN_FRANCISCO_CARD" size="1.000000 1.491228" />
+    <ImageTarget name="HAMPORGHINI_CARD" size="1.000000 1.491228" />
+    <ImageTarget name="hampomarcador" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
