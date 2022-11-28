@@ -24,10 +24,18 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
+    public static CameraPointer instance;
+
+
     private const float _maxDistance = 10;
     private GameObject _gazedAtObject = null;
 
     public Animator pointerAnim;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     /// <summary>
     /// Update is called once per frame.
@@ -47,20 +55,12 @@ public class CameraPointer : MonoBehaviour
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
             }
-
-            // Animation
-            if (_gazedAtObject.tag == "Interactive") pointerAnim?.SetBool("Active", true);
-            else pointerAnim?.SetBool("Active", false);
         }
         else
         {
             // No GameObject detected in front of the camera.
             _gazedAtObject?.SendMessage("OnPointerExit");
             _gazedAtObject = null;
-
-
-            // Animation
-            pointerAnim?.SetBool("Active", false);
         }
 
         // Checks for screen touches.
@@ -68,5 +68,10 @@ public class CameraPointer : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("OnPointerClick");
         }
+    }
+
+    public void Pointing(bool state)
+    {
+        pointerAnim?.SetBool("Active", state);
     }
 }
