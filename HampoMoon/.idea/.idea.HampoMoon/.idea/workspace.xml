@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05292b19-b454-415e-a1cd-f57f501a5bd4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HampoMoon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HampoMoon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/sueloTrans.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/sueloTrans.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Minijuego.unity" afterDir="false" />
-    </list>
+    <list default="true" id="05292b19-b454-415e-a1cd-f57f501a5bd4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +70,7 @@
       <workItem from="1668763840634" duration="2224000" />
       <workItem from="1668768970893" duration="22000" />
       <workItem from="1668769013670" duration="6000" />
+      <workItem from="1669819897296" duration="305000" />
     </task>
     <servers />
   </component>
