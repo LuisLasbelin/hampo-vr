@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pruebas/GameUI.unity
     guid: e6c432ad9dd634f469b38629863912a0
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6b31a49fe7d773645aa050389842ec81, type: 2}
