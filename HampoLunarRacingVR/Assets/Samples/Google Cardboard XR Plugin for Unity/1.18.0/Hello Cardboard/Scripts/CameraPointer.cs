@@ -31,6 +31,7 @@ public class CameraPointer : MonoBehaviour
     private GameObject _gazedAtObject = null;
 
     public Animator pointerAnim;
+    public GameObject pointer; 
 
     private void Awake()
     {
@@ -45,7 +46,14 @@ public class CameraPointer : MonoBehaviour
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
+
+        pointer.gameObject.transform.position = transform.position + transform.forward * _maxDistance;
+
+        // layerMask Interactiva 
+        int layerMask;
+        layerMask = 1 << LayerMask.NameToLayer("Interactive");
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance,layerMask)) // hit.point   donde esta tocando el rayo 
         {
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)
@@ -64,7 +72,8 @@ public class CameraPointer : MonoBehaviour
         }
 
         // Checks for screen touches.
-        if (Google.XR.Cardboard.Api.IsTriggerPressed)
+        //if (Google.XR.Cardboard.Api.IsTriggerPressed)
+        if (Input.GetButton("A"))
         {
             _gazedAtObject?.SendMessage("OnPointerClick");
         }
