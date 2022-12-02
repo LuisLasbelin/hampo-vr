@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using PathCreation.Examples;
+using TMPro;
 using UnityEngine;
 
 public class SkalextricInteraction : MonoBehaviour
@@ -9,25 +10,24 @@ public class SkalextricInteraction : MonoBehaviour
     [SerializeField] private PathFollower coche;
     [SerializeField] private GameObject MandoJugador;
     [SerializeField] private GameObject MandoDisplay;
+    [SerializeField] private TextMeshProUGUI textoDebug;
 
     private bool sujetandoMando = false;
-    
+
     private void Update()
     {
         if (sujetandoMando)
         {
-            if (Input.GetKey(KeyCode.K))
+            if (Input.GetAxis("Seleccionar") > 0f)
             {
                 coche.speed = 1f;
-
             }
-            if (!Input.GetKey(KeyCode.K))
+
+            if (Input.GetAxis("Seleccionar") <= 0f)
             {
                 coche.speed = 0f;
-
             }
         }
-
     }
 
     /// <summary>
@@ -45,12 +45,12 @@ public class SkalextricInteraction : MonoBehaviour
     {
         CameraPointer.instance.Pointing(false);
     }
-    
+
     /// <summary>
     /// This method is called by the Main Camera when it is gazing at this GameObject and the screen
     /// is touched.
     /// </summary>
-    public void OnPointerClick()
+    public void OnPointerButton()
     {
         sujetandoMando = !sujetandoMando;
         MandoDisplay.SetActive(!sujetandoMando);
@@ -61,5 +61,4 @@ public class SkalextricInteraction : MonoBehaviour
             coche.speed = 0f;
         }
     }
-    
 }

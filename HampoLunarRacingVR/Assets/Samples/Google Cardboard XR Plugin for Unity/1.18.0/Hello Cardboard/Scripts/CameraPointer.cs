@@ -68,6 +68,12 @@ public class CameraPointer : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("OnPointerClick");
         }
+        
+        // Checks for screen touches.
+        if (Input.GetButtonDown("Seleccionar"))
+        {
+            _gazedAtObject?.SendMessage("OnPointerButton");
+        }
     }
 
     public void Pointing(bool state)
