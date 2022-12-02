@@ -20,12 +20,7 @@ public class SkalextricInteraction : MonoBehaviour
         {
             if (Input.GetAxis("Seleccionar") > 0f)
             {
-                coche.speed = 1f;
-            }
-
-            if (Input.GetAxis("Seleccionar") <= 0f)
-            {
-                coche.speed = 0f;
+                coche.speed = Mathf.Clamp(coche.speed + coche.accel, 0, coche.maxSpeed);
             }
         }
     }
@@ -55,10 +50,5 @@ public class SkalextricInteraction : MonoBehaviour
         sujetandoMando = !sujetandoMando;
         MandoDisplay.SetActive(!sujetandoMando);
         MandoJugador.SetActive(sujetandoMando);
-
-        if (!sujetandoMando)
-        {
-            coche.speed = 0f;
-        }
     }
 }

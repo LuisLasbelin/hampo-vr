@@ -8,7 +8,9 @@ namespace PathCreation.Examples
     {
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
-        public float speed = 5;
+        public float accel = 2;
+        public float speed = 0;
+        public float maxSpeed = 10;
         float distanceTravelled;
 
         void Start() {
@@ -24,6 +26,7 @@ namespace PathCreation.Examples
             if (pathCreator != null)
             {
                 distanceTravelled += speed * Time.deltaTime;
+                speed = Mathf.Clamp(speed - 0.5f, 0, maxSpeed);
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
                 transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
             }

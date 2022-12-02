@@ -73,6 +73,8 @@ public class CameraPointer : MonoBehaviour
         if (Input.GetButtonDown("Seleccionar"))
         {
             _gazedAtObject?.SendMessage("OnPointerButton");
+
+            pointerAnim?.SetTrigger("Click");
         }
     }
 
