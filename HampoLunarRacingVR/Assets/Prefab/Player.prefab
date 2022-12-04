@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebfb4b86b2e54606894da54f755db2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marcaTP: {fileID: 0}
   pointerAnim: {fileID: 5867737293521179715}
 --- !u!114 &5867737293319238663
 MonoBehaviour:

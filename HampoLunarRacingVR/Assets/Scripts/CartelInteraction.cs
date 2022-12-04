@@ -7,6 +7,7 @@ public class CartelInteraction : MonoBehaviour
 {
     [SerializeField] private Material cartelHover;
     [SerializeField] private Material cartelBase;
+    [SerializeField] private string escenaACargar;
     
     /// <summary>
     /// This method is called by the Main Camera when it starts gazing at this GameObject.
@@ -35,6 +36,6 @@ public class CartelInteraction : MonoBehaviour
     /// </summary>
     public void OnPointerButton()
     {
-        SceneManager.LoadScene("Pruebas");
+        SceneManager.LoadScene(escenaACargar);
     }
 }

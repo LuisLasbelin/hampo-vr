@@ -76,6 +76,19 @@ public class CameraPointer : MonoBehaviour
 
             pointerAnim?.SetTrigger("Click");
         }
+
+        // Checks for screen touches.
+        if (Input.GetButtonUp("Teletransporte"))
+        {
+            _gazedAtObject?.SendMessage("OnPointerButton2",hit.point);
+
+            pointerAnim?.SetTrigger("Click");
+        }
+
+        if (Input.GetButton("Teletransporte"))
+        {
+            _gazedAtObject?.SendMessage("OnPointerHold",hit.point);
+        }
     }
 
     public void Pointing(bool state)
