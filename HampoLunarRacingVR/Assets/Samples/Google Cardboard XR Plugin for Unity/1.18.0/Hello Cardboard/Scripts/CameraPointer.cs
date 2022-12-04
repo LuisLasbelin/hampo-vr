@@ -31,8 +31,8 @@ public class CameraPointer : MonoBehaviour
     private GameObject _gazedAtObject = null;
 
     public Animator pointerAnim;
-    public GameObject pointer; 
-
+    public GameObject pointer;
+    public GameObject Player;
     private void Awake()
     {
         instance = this;
@@ -62,6 +62,7 @@ public class CameraPointer : MonoBehaviour
                 _gazedAtObject?.SendMessage("OnPointerExit");
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
+                Debug.Log(_gazedAtObject);
             }
         }
         else
@@ -75,7 +76,8 @@ public class CameraPointer : MonoBehaviour
         //if (Google.XR.Cardboard.Api.IsTriggerPressed)
         if (Input.GetButton("A"))
         {
-            _gazedAtObject?.SendMessage("OnPointerClick");
+            //_gazedAtObject?.SendMessage("OnPointerClick",hit.transform.position);
+            Player.transform.position = hit.transform.position;
         }
     }
 
