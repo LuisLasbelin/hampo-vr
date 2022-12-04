@@ -43,18 +43,17 @@ public class SueloInteraction : MonoBehaviour
     {
         tiempo = 0f;
         Vector3 prevPose = jogador.transform.position;
-        while (tiempo < 0.33f)
+        while (tiempo < 0.05f)
         {
-            jogador.transform.position = new Vector3(Mathf.Lerp(prevPose.x, punto.x, tiempo * 3),
-                jogador.transform.position.y, Mathf.Lerp(prevPose.z, punto.z, tiempo * 3));
+            jogador.transform.position = new Vector3(punto.x, jogador.transform.position.y, punto.z);
             yield return null;
         }
 
         yield break;
     }
-    
-      public void OnPointerHold(Vector3 punto)
-        {
-            marcaTP.transform.position = punto;
-        }
+
+    public void OnPointerHold(Vector3 punto)
+    {
+        marcaTP.transform.position = punto;
+    }
 }
