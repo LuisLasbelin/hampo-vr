@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class VideoManager : MonoBehaviour
 {
-    public string menuScene = "MainMenu";
+    public string menuScene = "MenuInicio";
 
     // Update is called once per frame
     void Update()

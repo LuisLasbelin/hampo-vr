@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79024878e2331cd419d7c11f527be7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuScene: MainMenu
+  menuScene: MenuInicio
 --- !u!4 &1152027856
 Transform:
   m_ObjectHideFlags: 0
