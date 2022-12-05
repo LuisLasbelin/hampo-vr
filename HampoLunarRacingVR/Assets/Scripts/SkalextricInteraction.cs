@@ -10,7 +10,7 @@ public class SkalextricInteraction : MonoBehaviour
     [SerializeField] private PathFollower coche;
     [SerializeField] private GameObject MandoJugador;
     [SerializeField] private GameObject MandoDisplay;
-    [SerializeField] private TextMeshProUGUI textoDebug;
+    //[SerializeField] private TextMeshProUGUI textoDebug;
 
     private bool sujetandoMando = false;
 
