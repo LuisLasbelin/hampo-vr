@@ -10,7 +10,8 @@ public class VideoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Seleccionar"))
+        
+        if(Input.anyKey)
         {
             SceneManager.LoadScene(menuScene, LoadSceneMode.Single);
         }
