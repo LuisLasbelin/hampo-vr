@@ -5,40 +5,70 @@ using Valve.VR.InteractionSystem;
 
 public class CocheBase : MonoBehaviour
 {
-    public Coche coche;
+    Rigidbody rb;
 
-    public Transform[] ruedasGiro;
+    // Objeto con los datos del coche
+    public Coche coche;
+    // Velocidad actual del coche
+    public float velocity;
+    // Angulo que está girando actualmente en grados
+    public float anguloGiro;
+    // Ruedas para el efecto visual del giro
+    public Rigidbody[] ruedasGiro;
+
+    // Vectores para usar en las formulas
+    Vector3 forward = new Vector3(0, 0, 1);
+    Vector3 backward = new Vector3(0, 0, -1);
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    virtual public void acelerar(Rigidbody rb, Vector3 v)
+    private void FixedUpdate()
     {
-        rb.AddForce(v * coche.factorAceleracion * Time.deltaTime);
-        Debug.Log("acelerar");
+        // Movimiento hacia delante/detras
+        transform.Translate(forward * velocity * Time.deltaTime);
 
+        // Rotar angulo de fuerzas
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(0, anguloGiro * Time.deltaTime * coche.factorGiro, 0));
     }
 
-    virtual public void frenar(Rigidbody rb, Vector3 v)
+    /**
+     * Añade velocidad al coche
+     * 
+     */
+    virtual public void acelerar()
+    {
+        velocity += coche.factorAceleracion;
+    }
+    /**
+     * Quita velocidad al coche
+     * 
+     */
+    virtual public void frenar()
     {
         Debug.Log("frenar");
-        rb.AddForce(v * -coche.factorFreno * Time.deltaTime);
+        //rb.AddForce(v * -coche.factorFreno * Time.deltaTime);
 
     }
 
-    virtual public void derrapar(Rigidbody rb, Vector3 v)
+    /**
+     * Inicia un derrape
+     * 
+     */
+    virtual public void derrapar()
     {
         Debug.Log("derrapar");
     }
 
+    /**
+     * Se llama cuando el volante gira para añadir nuevo angulo
+     */
     virtual public void girar(float angle)
     {
-        foreach (var rueda in ruedasGiro)
-        {
-            rueda.rotation = Quaternion.Euler(rueda.rotation.x, angle, rueda.rotation.z);
-        }
+        // Limitacion del giro
+        anguloGiro = Mathf.Clamp(angle, -45, 45);
     }
 }

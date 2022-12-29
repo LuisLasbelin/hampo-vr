@@ -15,5 +15,5 @@ MonoBehaviour:
   prefabName: Sppky
   factorAceleracion: 6
   factorFreno: 3
-  factorGiro: 4
+  factorGiro: 0.5
   factorDerrape: 2

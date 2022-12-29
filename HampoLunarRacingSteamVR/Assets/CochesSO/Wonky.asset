@@ -15,5 +15,5 @@ MonoBehaviour:
   prefabName: Wonky
   factorAceleracion: 3
   factorFreno: 1
-  factorGiro: 1
+  factorGiro: 0.2
   factorDerrape: 1
