@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.hampolunarracingsteamvr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Luis\\Documents\\GTI\\hampo-vr\\HampoLunarRacingSteamVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\adrma\\Documents\\GitHub\\hampo-vr\\HampoLunarRacingSteamVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "HampoLunarRacingSteamVR [Testing]"

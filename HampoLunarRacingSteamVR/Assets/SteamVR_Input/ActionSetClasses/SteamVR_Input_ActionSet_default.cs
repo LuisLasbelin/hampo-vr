@@ -105,6 +105,22 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean Acelerar
+        {
+            get
+            {
+                return SteamVR_Actions.default_Acelerar;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Derrapar
+        {
+            get
+            {
+                return SteamVR_Actions.default_Derrapar;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

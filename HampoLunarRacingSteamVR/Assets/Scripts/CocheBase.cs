@@ -9,10 +9,13 @@ public class CocheBase : MonoBehaviour
 
     // Objeto con los datos del coche
     public Coche coche;
+
     // Velocidad actual del coche
     public float velocity;
+
     // Angulo que está girando actualmente en grados
     public float anguloGiro;
+
     // Ruedas para el efecto visual del giro
     public Rigidbody[] ruedasGiro;
 
@@ -41,8 +44,15 @@ public class CocheBase : MonoBehaviour
      */
     virtual public void acelerar()
     {
+        if (velocity + coche.factorAceleracion > coche.maximaVelocidad)
+        {
+            velocity = coche.maximaVelocidad;
+            return;
+        }
+
         velocity += coche.factorAceleracion;
     }
+
     /**
      * Quita velocidad al coche
      * 
@@ -50,8 +60,17 @@ public class CocheBase : MonoBehaviour
     virtual public void frenar()
     {
         Debug.Log("frenar");
-        //rb.AddForce(v * -coche.factorFreno * Time.deltaTime);
 
+        if (velocity - coche.factorFreno < 0)
+        {
+            velocity = 0;
+            return;
+        }
+
+        velocity -= coche.factorFreno;
+
+
+        //rb.AddForce(v * -coche.factorFreno * Time.deltaTime);
     }
 
     /**

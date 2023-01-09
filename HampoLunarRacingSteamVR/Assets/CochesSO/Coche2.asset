@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: Sppky
   factorAceleracion: 6
+  maximaVelocidad: 10
   factorFreno: 3
   factorGiro: 0.5
   factorDerrape: 2
