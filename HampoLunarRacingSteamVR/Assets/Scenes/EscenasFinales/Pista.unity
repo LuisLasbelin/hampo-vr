@@ -218,7 +218,7 @@ MonoBehaviour:
   onMinAngle:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444393747}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControladorCoche, Assembly-CSharp
         m_MethodName: Derrapar
         m_Mode: 1
@@ -1267,7 +1267,8 @@ GameObject:
   - component: {fileID: 1444393745}
   - component: {fileID: 1444393746}
   - component: {fileID: 1444393748}
-  - component: {fileID: 1444393747}
+  - component: {fileID: 1444393750}
+  - component: {fileID: 1444393749}
   m_Layer: 0
   m_Name: Coche
   m_TagString: Untagged
@@ -1312,36 +1313,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1444393747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444393742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b545fa89a3700d04f85030d701f4ea1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acelerado:
-    actionPath: /actions/default/in/Acelerar
-    needsReinit: 0
-  derrapar:
-    actionPath: /actions/default/in/Derrapar
-    needsReinit: 0
-  frontDriverW: {fileID: 1231010628}
-  frontPassengerW: {fileID: 2048170670}
-  rearDriverW: {fileID: 1261340157}
-  rearPassengerW: {fileID: 499959773}
-  frontDriverT: {fileID: 1811104563}
-  frontPassengerT: {fileID: 1833106284}
-  rearDriverT: {fileID: 1278328672}
-  rearPassengerT: {fileID: 1107988374}
-  maxSteerAngle: 30
-  motorForce: 250
-  circularDriveVolante: {fileID: 719960891}
-  circularDriveFrenoDeMano: {fileID: 78885046}
 --- !u!65 &1444393748
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1355,6 +1326,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8145639, y: 0.22060198, z: 1.6918525}
   m_Center: {x: 0.011841714, y: 0.15801263, z: -0.5410828}
+--- !u!114 &1444393749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444393742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e8a7668f59225419caa6912835cc2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coche: {fileID: 11400000, guid: 5daaeec6bf0be44458c1ab08cad424a8, type: 2}
+  frontDriverW: {fileID: 2048170670}
+  frontPassengerW: {fileID: 1231010628}
+  rearDriverW: {fileID: 499959773}
+  rearPassengerW: {fileID: 1261340157}
+  frontDriverT: {fileID: 1811104563}
+  frontPassengerT: {fileID: 1833106284}
+  rearDriverT: {fileID: 1278328672}
+  rearPassengerT: {fileID: 1107988374}
+  maxSteerAngle: 30
+--- !u!114 &1444393750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444393742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff52a3adf1bd58643a4bfbf61e0c1d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coche: {fileID: 11400000, guid: 5daaeec6bf0be44458c1ab08cad424a8, type: 2}
+  circularDriveVolante: {fileID: 719960891}
+  circularDriveFrenoDeMano: {fileID: 78885046}
+  acelerado:
+    actionPath: /actions/default/in/Acelerar
+    needsReinit: 0
 --- !u!1001 &1478288223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1581,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3184427784485212608, guid: 4c6d20a6ca080d64ba0acff519a12808, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.584
+      value: -0.461
       objectReference: {fileID: 0}
     - target: {fileID: 3184427784485212608, guid: 4c6d20a6ca080d64ba0acff519a12808, type: 3}
       propertyPath: m_LocalRotation.w

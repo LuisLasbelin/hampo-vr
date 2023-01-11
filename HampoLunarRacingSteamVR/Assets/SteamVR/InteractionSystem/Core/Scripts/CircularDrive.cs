@@ -153,8 +153,8 @@ namespace Valve.VR.InteractionSystem
 
 			if ( transform.parent )
 			{
-				worldPlaneNormal = transform.parent.localToWorldMatrix.MultiplyVector( worldPlaneNormal ).normalized;
-			}
+				worldPlaneNormal = transform.parent.localToWorldMatrix.MultiplyVector(worldPlaneNormal).normalized;
+            }
 
 			if ( limited )
 			{
@@ -311,8 +311,8 @@ namespace Valve.VR.InteractionSystem
 		}
 
 
-		//-------------------------------------------------
-		private void DrawDebugPath( Transform xForm, Vector3 toTransformProjected )
+        //-------------------------------------------------
+        private void DrawDebugPath( Transform xForm, Vector3 toTransformProjected )
 		{
 			if ( dbgObjectCount == 0 )
 			{

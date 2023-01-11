@@ -1,37 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class HumanInput : MonoBehaviour
 {
-    CocheBase coche;
-    public CircularDrive circularDrive;
+    CocheBase controlCoche;
+    public Coche coche;
+    public CircularDrive circularDriveVolante;
+    public CircularDrive circularDriveFrenoDeMano;
+
+    public SteamVR_Action_Boolean acelerado;
     // Start is called before the first frame update
     void Start()
     {
-        coche = gameObject.GetComponent<CocheBase>();
+        controlCoche = gameObject.GetComponent<CocheBase>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //frenar
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            coche.frenar();
-        }
-        //acelerar
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            coche.acelerar();
-        }
-        //derrapar
-        if (Input.GetKey(KeyCode.Space))
-        {
-            coche.derrapar();
-        }
-
-        coche.girar(circularDrive.outAngle);
+        controlCoche.Steer(circularDriveVolante.outAngle);
+        //TODO: derrapar con palanca
+        controlCoche.Derrapar(false, coche.factorDerrape);
+        controlCoche.Accelerate(acelerado.state, coche.factorAceleracion);
     }
 }

@@ -872,11 +872,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coche: {fileID: 11400000, guid: 9fa5980a49e04e8409ee17fa79232257, type: 2}
-  velocity: 0.2
-  anguloGiro: 0
-  ruedasGiro:
-  - {fileID: 0}
-  - {fileID: 0}
+  frontDriverW: {fileID: 0}
+  frontPassengerW: {fileID: 0}
+  rearDriverW: {fileID: 0}
+  rearPassengerW: {fileID: 0}
+  frontDriverT: {fileID: 0}
+  frontPassengerT: {fileID: 0}
+  rearDriverT: {fileID: 0}
+  rearPassengerT: {fileID: 0}
+  maxSteerAngle: 30
 --- !u!114 &1444393744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff52a3adf1bd58643a4bfbf61e0c1d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circularDrive: {fileID: 719960891}
+  coche: {fileID: 0}
+  circularDriveVolante: {fileID: 0}
+  circularDriveFrenoDeMano: {fileID: 0}
+  acelerado:
+    actionPath: 
+    needsReinit: 0
 --- !u!4 &1444393745
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class CocheBase : MonoBehaviour
@@ -10,18 +11,12 @@ public class CocheBase : MonoBehaviour
     // Objeto con los datos del coche
     public Coche coche;
 
-    // Velocidad actual del coche
-    public float velocity;
-
-    // Angulo que está girando actualmente en grados
-    public float anguloGiro;
-
-    // Ruedas para el efecto visual del giro
-    public Rigidbody[] ruedasGiro;
-
-    // Vectores para usar en las formulas
-    Vector3 forward = new Vector3(0, 0, 1);
-    Vector3 backward = new Vector3(0, 0, -1);
+    // Ruedas
+    public WheelCollider frontDriverW, frontPassengerW;
+    public WheelCollider rearDriverW, rearPassengerW;
+    public Transform frontDriverT, frontPassengerT;
+    public Transform rearDriverT, rearPassengerT;
+    public float maxSteerAngle = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -31,63 +26,58 @@ public class CocheBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movimiento hacia delante/detras
-        transform.Translate(forward * velocity * Time.deltaTime);
-
-        // Rotar angulo de fuerzas
-        rb.MoveRotation(rb.rotation * Quaternion.Euler(0, anguloGiro * Time.deltaTime * coche.factorGiro, 0));
+        UpdateWheelPoses();
+        //Debug.Log(circularDrive.outAngle);
     }
 
-    /**
-     * Añade velocidad al coche
-     * 
-     */
-    virtual public void acelerar()
+    public void Steer(float angulo)
     {
-        if (velocity + coche.factorAceleracion > coche.maximaVelocidad)
+        frontDriverW.steerAngle = angulo;
+        frontPassengerW.steerAngle = angulo;
+    }
+
+    public void Accelerate(bool state, float inputForce)
+    {
+        if (state)
         {
-            velocity = coche.maximaVelocidad;
+            rearDriverW.motorTorque = inputForce;
+            rearPassengerW.motorTorque = inputForce;
             return;
         }
-
-        velocity += coche.factorAceleracion;
+        //rearDriverW.motorTorque = 1 * motorForce;
+        //rearPassengerW.motorTorque = 1 * motorForce;
     }
 
-    /**
-     * Quita velocidad al coche
-     * 
-     */
-    virtual public void frenar()
+    public void Derrapar(bool state, float angle)
     {
-        Debug.Log("frenar");
-
-        if (velocity - coche.factorFreno < 0)
+        if (state)
         {
-            velocity = 0;
-            return;
+            rearDriverW.brakeTorque = 20000000;
+            rearPassengerW.brakeTorque = 20000000;
         }
-
-        velocity -= coche.factorFreno;
-
-
-        //rb.AddForce(v * -coche.factorFreno * Time.deltaTime);
+        else
+        {
+            rearDriverW.brakeTorque = 0;
+            rearPassengerW.brakeTorque = 0;
+        }
     }
 
-    /**
-     * Inicia un derrape
-     * 
-     */
-    virtual public void derrapar()
+    private void UpdateWheelPoses()
     {
-        Debug.Log("derrapar");
+        UpdateWheelPose(frontDriverW, frontDriverT);
+        UpdateWheelPose(frontPassengerW, frontPassengerT);
+        UpdateWheelPose(rearDriverW, rearDriverT);
+        UpdateWheelPose(rearPassengerW, rearPassengerT);
     }
 
-    /**
-     * Se llama cuando el volante gira para añadir nuevo angulo
-     */
-    virtual public void girar(float angle)
+    private void UpdateWheelPose(WheelCollider _collider, Transform _transform)
     {
-        // Limitacion del giro
-        anguloGiro = Mathf.Clamp(angle, -45, 45);
+        Vector3 _pos = _transform.position;
+        Quaternion _quat = _transform.rotation;
+
+        _collider.GetWorldPose(out _pos, out _quat);
+
+        _transform.position = _pos;
+        _transform.rotation = _quat;
     }
 }
