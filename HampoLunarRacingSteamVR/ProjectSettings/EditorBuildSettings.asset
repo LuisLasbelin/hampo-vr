@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscenasFinales/Pista.unity
     guid: c0242c9ec81858d4ca089f131baecdb7
+  - enabled: 1
+    path: Assets/Scenes/EscenasFinales/MenuInicio.unity
+    guid: 6d0b45ceca959e540864245e64dd497c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: cc3bab4ad5af63648a522afdb5e8d65e, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 3d1f0e1f65566fb4e99819d7327d7156, type: 2}
