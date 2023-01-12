@@ -21,9 +21,9 @@ public class HumanInput : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        controlCoche.Steer(circularDriveVolante.outAngle);
+        //controlCoche.Steer(circularDriveVolante.outAngle);
         //TODO: derrapar con palanca
-        controlCoche.Derrapar(false, coche.factorDerrape);
+        controlCoche.Derrapar(false);
         controlCoche.Accelerate(acelerado.state, coche.factorAceleracion);
     }
 }

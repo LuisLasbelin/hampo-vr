@@ -48,7 +48,7 @@ public class CocheBase : MonoBehaviour
         //rearPassengerW.motorTorque = 1 * motorForce;
     }
 
-    public void Derrapar(bool state, float angle)
+    public void Derrapar(bool state)
     {
         if (state)
         {
