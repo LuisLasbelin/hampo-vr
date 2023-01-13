@@ -1727,6 +1727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3184427784485691832, guid: 4c6d20a6ca080d64ba0acff519a12808, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3184427784486812378, guid: 4c6d20a6ca080d64ba0acff519a12808, type: 3}
       propertyPath: far clip plane
       value: 3000
