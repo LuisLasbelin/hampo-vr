@@ -36,24 +36,32 @@ public class ControlFrenoMano : MonoBehaviour
             angulo += Mathf.PI;
             float anguloRectificado = -angulo / (2 * Mathf.PI);
             //Debug.Log((anguloRectificado - prevAnguloRectificado) * 360);
-            float anguloEnGrados = freno.localEulerAngles.x + (anguloRectificado - prevAnguloRectificado) * 360;
+            float anguloEnGrados = -anguloRectificado * 360;
+            //float anguloEnGrados = freno.localEulerAngles.x + (anguloRectificado - prevAnguloRectificado) * 360;
 
-            if (anguloEnGrados > 30)
+            float anguloFreno = 0;
+
+
+            if (anguloEnGrados > 210)
             {
-                anguloEnGrados = 30;
+                //Debug.Log("mu arriba");
+                anguloFreno = -30;
                 coche.Derrapar(true);
             }
-            else if (anguloEnGrados < 0)
+            else if (anguloEnGrados < 180)
             {
-                anguloEnGrados = 0;
+                //Debug.Log("mu abajo");
                 coche.Derrapar(false);
             }
             else
             {
+                anguloFreno = -(anguloEnGrados - 180);
+                //Debug.Log(anguloEnGrados);
+                //Debug.Log(anguloFreno);
                 coche.Derrapar(false);
             }
 
-            freno.localEulerAngles = new Vector3(anguloEnGrados, 0, 0);
+            freno.localEulerAngles = new Vector3(anguloFreno, 0, 0);
             prevAnguloRectificado = anguloRectificado;
         }
     }
@@ -61,12 +69,5 @@ public class ControlFrenoMano : MonoBehaviour
     public void toogleAgarrar(bool ag)
     {
         agarrao = ag;
-
-        Transform posicionMano = interactable.attachedToHand.transform;
-        Vector3 posicionRelativa = transform.InverseTransformPoint(posicionMano.position);
-        //Debug.Log(posicionRelativa);
-        float angulo = Mathf.Atan2(posicionRelativa.x, posicionRelativa.z);
-        angulo += Mathf.PI;
-        prevAnguloRectificado = -angulo / (2 * Mathf.PI);
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wonky
   m_EditorClassIdentifier: 
   prefabName: Wonky
-  factorAceleracion: 200
+  factorAceleracion: 400
   maximaVelocidad: 10
   factorFreno: 1
   factorGiro: 0.2

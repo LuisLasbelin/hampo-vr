@@ -44,6 +44,9 @@ public class CocheBase : MonoBehaviour
             rearPassengerW.motorTorque = inputForce;
             return;
         }
+
+        rearDriverW.motorTorque = 0;
+        rearPassengerW.motorTorque = 0;
         //rearDriverW.motorTorque = 1 * motorForce;
         //rearPassengerW.motorTorque = 1 * motorForce;
     }
@@ -52,11 +55,15 @@ public class CocheBase : MonoBehaviour
     {
         if (state)
         {
+            frontDriverW.brakeTorque = 20000000;
+            frontPassengerW.brakeTorque = 20000000;
             rearDriverW.brakeTorque = 20000000;
             rearPassengerW.brakeTorque = 20000000;
         }
         else
         {
+            frontDriverW.brakeTorque = 0;
+            frontPassengerW.brakeTorque = 0;
             rearDriverW.brakeTorque = 0;
             rearPassengerW.brakeTorque = 0;
         }
@@ -72,12 +79,9 @@ public class CocheBase : MonoBehaviour
 
     private void UpdateWheelPose(WheelCollider _collider, Transform _transform)
     {
-        Vector3 _pos = _transform.position;
-        Quaternion _quat = _transform.rotation;
-
-        _collider.GetWorldPose(out _pos, out _quat);
-
-        _transform.position = _pos;
-        _transform.rotation = _quat;
+        float angulo = Time.deltaTime * (_collider.rpm / 60 * 360);
+        Debug.Log(angulo);
+        Debug.Log(_transform.rotation.x);
+        _transform.localEulerAngles = new Vector3(_transform.localEulerAngles.x, _collider.steerAngle, 0);
     }
 }
