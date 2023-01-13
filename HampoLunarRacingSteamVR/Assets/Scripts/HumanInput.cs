@@ -10,6 +10,7 @@ public class HumanInput : MonoBehaviour
     public Coche coche;
 
     public SteamVR_Action_Boolean acelerado;
+
     // Start is called before the first frame update
     void Start()
     {

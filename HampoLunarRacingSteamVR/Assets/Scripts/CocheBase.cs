@@ -84,4 +84,9 @@ public class CocheBase : MonoBehaviour
         Debug.Log(_transform.rotation.x);
         _transform.localEulerAngles = new Vector3(_transform.localEulerAngles.x, _collider.steerAngle, 0);
     }
+
+    public float GetSpeed()
+    {
+        return rb.velocity.magnitude;
+    }
 }

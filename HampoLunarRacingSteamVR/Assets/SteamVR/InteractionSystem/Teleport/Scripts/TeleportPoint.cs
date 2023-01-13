@@ -226,7 +226,7 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( !string.IsNullOrEmpty( switchToScene ) )
 			{
-				SceneManager.LoadScene(switchToScene);
+				SceneManager.LoadScene(switchToScene, LoadSceneMode.Single);
 			}
 			else
 			{

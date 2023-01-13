@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EscenasFinales/Player.unity
+    guid: 391c0f2a7bd74fe41bc0a5310af14acc
+  - enabled: 1
     path: Assets/Scenes/EscenasFinales/Casa.unity
     guid: 8e74d36353b498846b2f7428e7b67429
   - enabled: 1
