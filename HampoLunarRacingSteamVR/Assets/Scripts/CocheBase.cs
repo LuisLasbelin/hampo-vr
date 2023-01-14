@@ -80,8 +80,6 @@ public class CocheBase : MonoBehaviour
     private void UpdateWheelPose(WheelCollider _collider, Transform _transform)
     {
         float angulo = Time.deltaTime * (_collider.rpm / 60 * 360);
-        Debug.Log(angulo);
-        Debug.Log(_transform.rotation.x);
         _transform.localEulerAngles = new Vector3(_transform.localEulerAngles.x, _collider.steerAngle, 0);
     }
 

@@ -626,7 +626,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8047061476648878150, guid: 63149027cde30944890d8c659aa774db, type: 3}
       propertyPath: title
-      value: "V\xEDdeo"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8047061476648878150, guid: 63149027cde30944890d8c659aa774db, type: 3}
       propertyPath: switchToScene
@@ -1162,7 +1162,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8047061476648878150, guid: 63149027cde30944890d8c659aa774db, type: 3}
       propertyPath: title
-      value: Juego
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8047061476648878150, guid: 63149027cde30944890d8c659aa774db, type: 3}
       propertyPath: switchToScene
