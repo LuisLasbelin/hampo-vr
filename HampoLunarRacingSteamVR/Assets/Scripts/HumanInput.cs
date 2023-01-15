@@ -31,6 +31,8 @@ public class HumanInput : MonoBehaviour
             controlCoche.Accelerate(acelerado.state, coche.factorAceleracion);
         }
 
+        textoPose.text = controlCoche.posicion +"";
+
         menuFinalCarrera.SetActive(controladorCarrera.CarreraFinalizada);
     }
 }

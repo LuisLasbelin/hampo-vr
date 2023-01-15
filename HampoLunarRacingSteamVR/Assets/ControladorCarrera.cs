@@ -13,7 +13,7 @@ public class ControladorCarrera : MonoBehaviour
 
     [SerializeField] public int VueltasTotales = 0;
 
-    public Dictionary<CocheBase, int> coches = new Dictionary<CocheBase, int>();
+    public List<CocheBase> coches = new List<CocheBase>();
 
 
     // Start is called before the first frame update
@@ -21,7 +21,12 @@ public class ControladorCarrera : MonoBehaviour
     {
         foreach (CocheBase cocheBase in FindObjectsOfType<CocheBase>())
         {
-            coches.Add(cocheBase, cocheBase.CheckpointActual);
+            coches.Add(cocheBase);
+        }
+
+        for (int i = 0; i < Checkpoints.Count; i++)
+        {
+            Checkpoints[i].NumeroCheckpoint = i + 1;
         }
 
         StartCoroutine(delayEmpezarCarrera());
@@ -31,17 +36,38 @@ public class ControladorCarrera : MonoBehaviour
     {
         string texto = "";
 
-        Dictionary<CocheBase, int> updCoches = new Dictionary<CocheBase, int>();
-
-        foreach (KeyValuePair<CocheBase, int> coch in coches)
+        if (CarreraEmpezada)
         {
-            updCoches.Add(coch.Key, coch.Key.CheckpointActual);
-            texto += coch.Key.name + " " + coch.Value + " ,";
+            coches[0].posicion = 1;
+            for (int i = 0; i < coches.Count; i++)
+            {
+                for (int j = 0; j < coches.Count; j++)
+                {
+                    if (i != j)
+                    {
+                        if (coches[i].CheckpointActual > coches[j].CheckpointActual)
+                        {
+                            if (coches[i].posicion > coches[j].posicion)
+                            {
+                                (coches[j].posicion, coches[i].posicion) = (coches[i].posicion, coches[j].posicion);
+                            }
+                            else if (coches[i].posicion + 1 > coches[j].posicion)
+                            {
+                                coches[j].posicion = coches[i].posicion + 1;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        coches.Clear();
-        coches = updCoches;
-        
+
+        foreach (CocheBase coch in coches)
+        {
+            texto += coch.name + " " + coch.posicion + " ,||";
+        }
+
+
         Debug.Log(texto);
     }
 

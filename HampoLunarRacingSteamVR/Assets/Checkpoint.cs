@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    [SerializeField] private int NumeroCheckpoint;
+    [SerializeField] public int NumeroCheckpoint;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<CocheBase>())
         {
+
             other.gameObject.GetComponent<CocheBase>().cruzarCheckpoint(NumeroCheckpoint);
         }
     }

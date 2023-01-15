@@ -19,6 +19,8 @@ public class CocheBase : MonoBehaviour
     public Transform rearDriverT, rearPassengerT;
     public float maxSteerAngle = 30;
 
+    public int posicion = 1;
+
     private ControladorCarrera controladorCarrera;
 
     // Start is called before the first frame update
