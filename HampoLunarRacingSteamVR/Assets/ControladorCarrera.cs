@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControladorCarrera : MonoBehaviour
 {
@@ -67,9 +68,19 @@ public class ControladorCarrera : MonoBehaviour
             texto += coch.name + " " + coch.posicion + " ,||";
         }
 
+        if (CarreraFinalizada)
+        {
+            tiempoPostCarrera += Time.deltaTime;
+            if (tiempoPostCarrera > 10)
+            {
+                SceneManager.LoadScene("Scenes/EscenasFinales/Casa");
+            }
+        }
 
         Debug.Log(texto);
     }
+
+    private float tiempoPostCarrera = 0;
 
     public IEnumerator delayEmpezarCarrera()
     {

@@ -15,6 +15,7 @@ public class HumanInput : MonoBehaviour
 
     [SerializeField] private GameObject menuFinalCarrera;
     [SerializeField] private TextMeshProUGUI textoPose;
+    [SerializeField] private TextMeshProUGUI textoTiempo;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,12 @@ public class HumanInput : MonoBehaviour
             controlCoche.Accelerate(acelerado.state, coche.factorAceleracion);
         }
 
-        textoPose.text = controlCoche.posicion +"";
+        if (controladorCarrera.CarreraFinalizada)
+        {
+            textoPose.text = controlCoche.posicion +"";
+            textoTiempo.text = controlCoche.tiemposVueltas[0] +"";
+        }
+
 
         menuFinalCarrera.SetActive(controladorCarrera.CarreraFinalizada);
     }
