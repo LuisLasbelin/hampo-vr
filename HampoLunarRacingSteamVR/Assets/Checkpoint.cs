@@ -6,9 +6,11 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private int NumeroCheckpoint;
-    public Action<int> CheckponitPasado;
     private void OnTriggerEnter(Collider other)
     {
-        CheckponitPasado?.Invoke(NumeroCheckpoint);
+        if (other.gameObject.GetComponent<CocheBase>())
+        {
+            other.gameObject.GetComponent<CocheBase>().cruzarCheckpoint(NumeroCheckpoint);
+        }
     }
 }

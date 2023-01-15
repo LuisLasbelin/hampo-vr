@@ -1,46 +1,72 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ControladorCarrera : MonoBehaviour
 {
-    [SerializeField] private List<Checkpoint> Checkpoints;
+    [SerializeField] public List<Checkpoint> Checkpoints;
 
-    public int CheckpointActual = 0;
-    public int VueltaActual = 0;
-    [SerializeField] int VueltasTotales = 0;
+    public bool CarreraEmpezada;
+    public bool CarreraFinalizada;
+    public int timer = 3;
+
+    [SerializeField] public int VueltasTotales = 0;
+
+    public Dictionary<CocheBase, int> coches = new Dictionary<CocheBase, int>();
+
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Checkpoint checkpoint in Checkpoints)
+        foreach (CocheBase cocheBase in FindObjectsOfType<CocheBase>())
         {
-            checkpoint.CheckponitPasado += ActualizarCheckpoint;
+            coches.Add(cocheBase, cocheBase.CheckpointActual);
         }
-        Debug.Log(Checkpoints.Count);
+
+        StartCoroutine(delayEmpezarCarrera());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-    }
+        string texto = "";
 
-    public void ActualizarCheckpoint(int check)
-    {
-        if (check != (CheckpointActual + 1)) return;
-        CheckpointActual = check;
+        Dictionary<CocheBase, int> updCoches = new Dictionary<CocheBase, int>();
+
+        foreach (KeyValuePair<CocheBase, int> coch in coches)
+        {
+            updCoches.Add(coch.Key, coch.Key.CheckpointActual);
+            texto += coch.Key.name + " " + coch.Value + " ,";
+        }
+
+        coches.Clear();
+        coches = updCoches;
         
-        if (CheckpointActual < Checkpoints.Count) return;
-        ActualizarVuelta();
-        CheckpointActual = 0;
+        Debug.Log(texto);
     }
 
-    public void ActualizarVuelta()
+    public IEnumerator delayEmpezarCarrera()
     {
-        VueltaActual++;
-        if (VueltaActual == VueltasTotales)
-        {
-            Debug.Log("Se fini");
-        }
+        CarreraEmpezada = false;
+        yield return new WaitForSeconds(0);
+        Debug.Log("3");
+        timer = 3;
+        yield return new WaitForSeconds(1);
+
+        Debug.Log("2");
+        timer = 2;
+
+        yield return new WaitForSeconds(1);
+
+        Debug.Log("1");
+        timer = 1;
+
+        yield return new WaitForSeconds(1);
+
+        Debug.Log("GO");
+        timer = 0;
+
+        CarreraEmpezada = true;
+        yield return null;
     }
 }

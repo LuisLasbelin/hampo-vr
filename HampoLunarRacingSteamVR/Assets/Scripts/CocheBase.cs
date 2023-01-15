@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,16 +19,26 @@ public class CocheBase : MonoBehaviour
     public Transform rearDriverT, rearPassengerT;
     public float maxSteerAngle = 30;
 
+    private ControladorCarrera controladorCarrera;
+
     // Start is called before the first frame update
     void Start()
     {
+        controladorCarrera = FindObjectOfType<ControladorCarrera>();
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
         UpdateWheelPoses();
-        //Debug.Log(circularDrive.outAngle);
+    }
+
+    private void Update()
+    {
+        if (controladorCarrera.CarreraEmpezada)
+        {
+            tiempoVuelta += Time.deltaTime;
+        }
     }
 
     public void Steer(float angulo)
@@ -40,9 +51,12 @@ public class CocheBase : MonoBehaviour
     {
         if (state)
         {
-            rearDriverW.motorTorque = inputForce;
-            rearPassengerW.motorTorque = inputForce;
-            return;
+            if (rb.velocity.magnitude < coche.maximaVelocidad)
+            {
+                rearDriverW.motorTorque = inputForce;
+                rearPassengerW.motorTorque = inputForce;
+                return;
+            }
         }
 
         rearDriverW.motorTorque = 0;
@@ -86,5 +100,34 @@ public class CocheBase : MonoBehaviour
     public float GetSpeed()
     {
         return rb.velocity.magnitude;
+    }
+
+    public int CheckpointActual = 0;
+    public int VueltaActual = 0;
+
+    public float tiempoVuelta;
+    public List<float> tiemposVueltas = new List<float>();
+
+    public void cruzarCheckpoint(int check)
+    {
+        if (check != (CheckpointActual + 1)) return;
+        CheckpointActual = check;
+
+        if (CheckpointActual < controladorCarrera.Checkpoints.Count) return;
+        ActualizarVuelta();
+        CheckpointActual = 0;
+    }
+
+    public void ActualizarVuelta()
+    {
+        VueltaActual++;
+        tiemposVueltas.Add(tiempoVuelta);
+        tiempoVuelta = 0;
+        if (VueltaActual == controladorCarrera.VueltasTotales)
+        {
+            controladorCarrera.CarreraEmpezada = false;
+            controladorCarrera.CarreraFinalizada = true;
+            Debug.Log("Se fini");
+        }
     }
 }
