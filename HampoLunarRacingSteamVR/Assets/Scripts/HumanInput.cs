@@ -11,6 +11,8 @@ public class HumanInput : MonoBehaviour
     public Coche coche;
 
     public SteamVR_Action_Boolean acelerado;
+    public SteamVR_Action_Boolean atras;
+
     private ControladorCarrera controladorCarrera;
 
     [SerializeField] private GameObject menuFinalCarrera;
@@ -30,6 +32,8 @@ public class HumanInput : MonoBehaviour
         if (controladorCarrera.CarreraEmpezada)
         {
             controlCoche.Accelerate(acelerado.state, coche.factorAceleracion);
+            controlCoche.Rear(atras.state, coche.factorAceleracion);
+            controlCoche.ResetAccel(acelerado.state, atras.state);
         }
 
         if (controladorCarrera.CarreraFinalizada)

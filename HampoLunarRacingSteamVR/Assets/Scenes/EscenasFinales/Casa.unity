@@ -441,7 +441,8 @@ MonoBehaviour:
   endOfPathInstruction: 0
   accel: 10
   speed: 0
-  maxSpeed: 1000
+  rozamiento: 2
+  maxSpeed: 100
 --- !u!1 &568649339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1203702275761425669, guid: dd0940acfb62725499548b764e5a33b6, type: 3}

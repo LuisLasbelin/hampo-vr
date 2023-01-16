@@ -10,6 +10,7 @@ namespace PathCreation.Examples
         public EndOfPathInstruction endOfPathInstruction;
         public float accel = 2;
         public float speed = 0;
+        public float rozamiento = 0.75f;
         public float maxSpeed = 10;
         float distanceTravelled;
 
@@ -26,7 +27,7 @@ namespace PathCreation.Examples
             if (pathCreator != null)
             {
                 distanceTravelled += speed * Time.deltaTime;
-                speed = Mathf.Clamp(speed - 0.5f, 0, maxSpeed);
+                speed = Mathf.Clamp(speed - (rozamiento * Time.deltaTime), 0, maxSpeed);
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
                 transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
             }

@@ -60,11 +60,31 @@ public class CocheBase : MonoBehaviour
                 return;
             }
         }
+    }
 
-        rearDriverW.motorTorque = 0;
-        rearPassengerW.motorTorque = 0;
-        //rearDriverW.motorTorque = 1 * motorForce;
-        //rearPassengerW.motorTorque = 1 * motorForce;
+    public void Rear(bool state, float inputForce)
+    {
+        if (state)
+        {
+            if (rb.velocity.magnitude < coche.maximaVelocidad)
+            {
+                rearDriverW.motorTorque = -inputForce;
+                rearPassengerW.motorTorque = -inputForce;
+                return;
+            }
+        }
+    }
+
+    /**
+     * Reinicia el valor de aceleracion de las ruedas cuando no están activas
+     */
+    public void ResetAccel(bool accelState, bool rearState)
+    {
+        if(!accelState && !rearState)
+        {
+            rearDriverW.motorTorque = 0;
+            rearPassengerW.motorTorque = 0;
+        }
     }
 
     public void Derrapar(bool state)

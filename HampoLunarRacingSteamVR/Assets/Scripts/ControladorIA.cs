@@ -29,6 +29,7 @@ public class ControladorIA : MonoBehaviour
         if (controladorCarrera.CarreraEmpezada)
         {
             controlCoche.Accelerate(acelerar, coche.factorAceleracion);
+            controlCoche.ResetAccel(acelerar, false);
             controlCoche.Steer(girar);
             volante.transform.localEulerAngles = new Vector3(0, girar, 0);
         }

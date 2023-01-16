@@ -1078,8 +1078,11 @@ MonoBehaviour:
   rearDriverT: {fileID: 117827561262782368}
   rearPassengerT: {fileID: 536088599866709335}
   maxSteerAngle: 30
+  posicion: 1
   CheckpointActual: 0
   VueltaActual: 0
+  tiempoVuelta: 0
+  tiemposVueltas: []
 --- !u!114 &2434588799883763548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,6 +1101,8 @@ MonoBehaviour:
   maxVelocity: 100
   factor: 0
   manecilla: {fileID: 5436082367519827278}
+  textoPose: {fileID: 0}
+  textoTiempo: {fileID: 0}
 --- !u!114 &8240355515301153354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,8 +1572,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8240355516713399588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.272, y: 1.128, z: 0.2522}
-  m_LocalScale: {x: 0.796, y: 1, z: 0.7845}
+  m_LocalPosition: {x: 0.272, y: 0.9245, z: 0.322}
+  m_LocalScale: {x: 0.796, y: 0.593, z: 0.5158872}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6585337561729376155}

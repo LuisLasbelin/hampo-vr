@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class ControladorCarrera : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class ControladorCarrera : MonoBehaviour
     public bool CarreraEmpezada;
     public bool CarreraFinalizada;
     public int timer = 3;
+    public string escenaCasa;
+    public SteamVR_Action_Boolean salir;
 
     [SerializeField] public int VueltasTotales = 0;
 
@@ -70,22 +74,24 @@ public class ControladorCarrera : MonoBehaviour
 
         if (CarreraFinalizada)
         {
-            tiempoPostCarrera += Time.deltaTime;
-            if (tiempoPostCarrera > 10)
+            if (salir.state)
             {
-                SceneManager.LoadScene("Scenes/EscenasFinales/Casa");
+                // Se devuelve el player a que no sea destruido
+                DontDestroyOnLoad(GameObject.FindObjectOfType<Player>().gameObject);
+                // Se carga la escena de la casa
+                SceneManager.LoadScene(escenaCasa, LoadSceneMode.Single);
             }
         }
 
         Debug.Log(texto);
-    }
+    } // update
 
     private float tiempoPostCarrera = 0;
 
     public IEnumerator delayEmpezarCarrera()
     {
         CarreraEmpezada = false;
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(5);
         Debug.Log("3");
         timer = 3;
         yield return new WaitForSeconds(1);

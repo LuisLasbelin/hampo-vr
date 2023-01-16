@@ -2210,6 +2210,10 @@ MonoBehaviour:
   CarreraEmpezada: 0
   CarreraFinalizada: 0
   timer: 3
+  escenaCasa: Scenes/EscenasFinales/Casa
+  salir:
+    actionPath: /actions/default/in/Menu
+    needsReinit: 0
   VueltasTotales: 1
   coches: []
 --- !u!4 &1091969589

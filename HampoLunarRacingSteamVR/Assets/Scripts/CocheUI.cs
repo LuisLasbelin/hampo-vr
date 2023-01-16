@@ -35,8 +35,8 @@ public class CocheUI : MonoBehaviour
     void Update()
     {
         float angulo = coche.GetSpeed() * factor;
-        textoPose.text = coche.posicion +"";
-        textoTiempo.text = coche.tiempoVuelta +"";
+        textoPose.text = coche.posicion.ToString();
+        textoTiempo.text = System.Math.Round(coche.tiempoVuelta, 2).ToString();
         manecilla.eulerAngles = new Vector3(manecilla.eulerAngles.x, manecilla.eulerAngles.y, angulo);
     }
 }
